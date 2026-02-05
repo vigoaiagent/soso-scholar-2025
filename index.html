@@ -78,6 +78,26 @@
             0%, 100% { opacity: 0.5; }
             50% { opacity: 1; }
         }
+
+        /* Quotes Marquee */
+        .quotes-marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background: linear-gradient(90deg, rgba(255, 118, 55, 0.05) 0%, rgba(250, 204, 21, 0.05) 50%, rgba(255, 118, 55, 0.05) 100%);
+            border-top: 1px solid rgba(255, 118, 55, 0.1);
+            border-bottom: 1px solid rgba(255, 118, 55, 0.1);
+        }
+        .quotes-track {
+            display: inline-flex;
+            animation: marquee-scroll 40s linear infinite;
+        }
+        .quotes-track:hover {
+            animation-play-state: paused;
+        }
+        @keyframes marquee-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         .ark-waves {
             position: absolute;
             bottom: 28%;
@@ -1062,6 +1082,11 @@
                             </div>
                         </div>
                     </header>
+
+                    {/* Quote */}
+                    <div className="text-center py-8">
+                        <p className="text-white/60 text-sm tracking-wide italic">"Love One Another Inclusively, Benefit One Another Mutually."</p>
+                    </div>
 
                     {/* Winners Gallery */}
                     <main className="px-6 max-w-7xl mx-auto">
