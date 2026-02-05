@@ -21,8 +21,8 @@
       "twitter": "https://x.com/dapangdun",
       "twitter_handle": "dapangdun",
       "tokenbar": "https://sosovalue.com/tokenbar/post/2005531162254438401",
-      "region": "China",
-      "category": "比特币/预测市场",
+      "region": "Chinese",
+      "category": "Bitcoin/Prediction Market",
       "avatar": "./avatars/dapangdun.jpg"
     },
     {
@@ -76,7 +76,7 @@
       "twitter_handle": "the_smart_ape",
       "tokenbar": "https://sosovalue.com/research/2009059291816620032",
       "region": "Morocco",
-      "category": "预测市场 PolyMarket",
+      "category": "Prediction Market",
       "avatar": "./avatars/the_smart_ape.jpg"
     },
     {
@@ -93,7 +93,7 @@
       "twitter": "https://x.com/stacy_muur",
       "twitter_handle": "stacy_muur",
       "tokenbar": "https://sosovalue.com/research/2009069257887584256",
-      "region": "东欧（非欧盟）",
+      "region": "Eastern Europe",
       "category": "Perp DEX",
       "avatar": "./avatars/stacy_muur.jpg"
     },
@@ -112,7 +112,7 @@
       "twitter_handle": "0xProfessorJo",
       "tokenbar": "https://sosovalue.com/research/2011823985131085824",
       "region": "Korea",
-      "category": "稳定币",
+      "category": "Stablecoin",
       "avatar": "./avatars/0xProfessorJo.jpg"
     },
     {
@@ -142,12 +142,12 @@
         "Best Research",
         "Best Analysis"
       ],
-      "topic": "BTC的‘黑色星期一’：日圓加息對BTC價格的衝擊幾何？",
+      "topic": "BTC's 'Black Monday': How Will Japanese Yen Rate Hikes Impact BTC Prices?",
       "twitter": "https://x.com/CapitalAgarwood",
       "twitter_handle": "CapitalAgarwood",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1996425524144435202",
-      "region": "China",
-      "category": "比特币",
+      "region": "Chinese",
+      "category": "Bitcoin",
       "avatar": "./avatars/CapitalAgarwood.jpg"
     },
     {
@@ -164,7 +164,7 @@
       "twitter_handle": "tradinghoex",
       "tokenbar": "https://sosovalue.com/research/2011811637625159680",
       "region": "North America",
-      "category": "叙事",
+      "category": "Narrative",
       "avatar": "./avatars/tradinghoex.jpg"
     },
     {
@@ -193,12 +193,12 @@
         "Best Analysis",
         "Most Popular"
       ],
-      "topic": "极度恐惧不是买入的好时机；剖析结构性转变的两个方面",
+      "topic": "Extreme Fear Is Not the Best Time to Buy: Analyzing Two Aspects of Structural Changes",
       "twitter": "https://x.com/gayau_eth",
       "twitter_handle": "gayau_eth",
       "tokenbar": "https://sosovalue.com/sosocholar/post/1994614995004354561",
-      "region": "Taiwan",
-      "category": "交易",
+      "region": "Chinese",
+      "category": "Trading",
       "avatar": "./avatars/gayau_eth.jpg"
     },
     {
@@ -214,12 +214,12 @@
       "twitter_handle": "panterafii",
       "tokenbar": "https://sosovalue.com/en/tokenbar/post/1991117528823595009",
       "region": "France",
-      "category": "稳定币",
+      "category": "Stablecoin",
       "avatar": "./avatars/panterafii.jpg"
     },
     {
       "id": 13,
-      "name": "佐爷",
+      "name": "Zuoye",
       "tier": 2,
       "prize": "$1,000",
       "awards": [
@@ -229,7 +229,7 @@
       "twitter": "https://x.com/zuoyeweb3",
       "twitter_handle": "zuoyeweb3",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1978003841212833794",
-      "region": "China",
+      "region": "Chinese",
       "category": "HYPE",
       "avatar": "./avatars/zuoyeweb3.jpg"
     },
@@ -269,19 +269,19 @@
     },
     {
       "id": 16,
-      "name": "菠菜",
+      "name": "Bocai",
       "tier": 2,
       "prize": "$1,000",
       "awards": [
         "Best Analysis",
         "Most Popular"
       ],
-      "topic": "万字解读《新加坡金管局发布RWA发行指导框架！十七种代币案例详解！香港可以抄作业了？》",
+      "topic": "Analysis: Singapore MAS RWA Issuance Framework with 17 Token Case Studies",
       "twitter": "https://x.com/bocaibocai_",
       "twitter_handle": "bocaibocai_",
       "tokenbar": "https://sosovalue.com/tokenbar/post/1993647010386243585",
-      "region": "China",
-      "category": "稳定币",
+      "region": "Chinese",
+      "category": "Stablecoin",
       "avatar": "https://unavatar.io/twitter/bocaibocai_"
     },
     {
@@ -297,7 +297,7 @@
       "twitter": "https://x.com/bc1qDave",
       "twitter_handle": "bc1qDave",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1993216451668275201",
-      "region": "China",
+      "region": "Chinese",
       "category": "HYPE",
       "avatar": "./avatars/bc1qDave.jpg"
     },
@@ -310,12 +310,12 @@
         "Best Analysis",
         "Most Popular"
       ],
-      "topic": "🔮推动 Bitcoin 的隐藏力量：全球 M2 - 流动性还是幻觉？",
+      "topic": "The Hidden Force Driving Bitcoin: Global M2 - Liquidity or Illusion?",
       "twitter": "https://x.com/Lutz_S120",
       "twitter_handle": "Lutz_S120",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1960381393069621249",
       "region": "Germany",
-      "category": "宏观",
+      "category": "Macro",
       "avatar": "./avatars/Lutz_S120.jpg"
     },
     {
@@ -327,12 +327,12 @@
         "Best Analysis",
         "Most Popular"
       ],
-      "topic": "从 a16z 的亚洲溃退开始聊下 VC 帝国的黄昏与新王",
+      "topic": "From a16z's Asian Retreat: The Twilight of VC Empires and New Kings",
       "twitter": "https://x.com/Anitahityou",
       "twitter_handle": "Anitahityou",
       "tokenbar": "https://sosovalue.com/zh/research/2008921116898639872",
-      "region": "China",
-      "category": "预测市场，RWA，VC",
+      "region": "Chinese",
+      "category": "Prediction Market, RWA, VC",
       "avatar": "./avatars/Anitahityou.jpg"
     },
     {
@@ -365,7 +365,7 @@
       "twitter_handle": "iammeme84",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1991431762314612738",
       "region": "Vietnam",
-      "category": "比特币挖矿",
+      "category": "Bitcoin Mining",
       "avatar": "./avatars/iammeme84.jpg"
     },
     {
@@ -376,11 +376,11 @@
       "awards": [
         "Best Research"
       ],
-      "topic": "关于 MEV、排序机制与权力演化的制度博弈反思 一",
+      "topic": "Reflections on MEV, Sequencing Mechanisms and Power Evolution - Part 1",
       "twitter": "https://x.com/c_luyishisi",
       "twitter_handle": "c_luyishisi",
       "tokenbar": "https://sosovalue.com/tokenbar/post/1989711112855040002",
-      "region": "China",
+      "region": "Chinese",
       "category": "DEFI",
       "avatar": "./avatars/c_luyishisi.jpg"
     },
@@ -397,7 +397,7 @@
       "twitter_handle": "izu_crypt",
       "tokenbar": "https://sosovalue.com/research/2013277106877325312",
       "region": "Africa",
-      "category": "山寨币",
+      "category": "Altcoins",
       "avatar": "./avatars/izu_crypt.jpg"
     },
     {
@@ -472,12 +472,12 @@
       "awards": [
         "Best Analysis"
       ],
-      "topic": "多周期 MACD 线性预测策略回测",
+      "topic": "Multi-Period MACD Linear Prediction Strategy Backtest",
       "twitter": "https://x.com/JellyZhouishere",
       "twitter_handle": "JellyZhouishere",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1995048144468279297",
-      "region": "China",
-      "category": "技术分析",
+      "region": "Chinese",
+      "category": "Technical Analysis",
       "avatar": "./avatars/JellyZhouishere.jpg"
     },
     {
@@ -488,12 +488,12 @@
       "awards": [
         "Best Analysis"
       ],
-      "topic": "BTC关键支撑与阻力位的博弈",
+      "topic": "BTC Key Support and Resistance Level Dynamics",
       "twitter": "https://x.com/Murphychen888",
       "twitter_handle": "Murphychen888",
       "tokenbar": "https://x.com/Murphychen888/status/1970403981727076568",
-      "region": "China",
-      "category": "比特币",
+      "region": "Chinese",
+      "category": "Bitcoin",
       "avatar": "./avatars/Murphychen888.jpg"
     },
     {
@@ -504,11 +504,11 @@
       "awards": [
         "Best Newcomer"
       ],
-      "topic": "秋季牛市攻势 - 流动性的盛宴（A feast of liquidity)",
+      "topic": "Autumn Bull Market Offensive - A Feast of Liquidity",
       "twitter": "https://x.com/xingpt",
       "twitter_handle": "xingpt",
       "tokenbar": "https://sosovalue.com/sosocholar/post/1968945825963196418",
-      "region": "China",
+      "region": "Chinese",
       "category": "",
       "avatar": "./avatars/xingpt.jpg"
     },
@@ -524,8 +524,8 @@
       "twitter": "https://x.com/gmharryyy",
       "twitter_handle": "gmharryyy",
       "tokenbar": "https://sosovalue.com/zh/sososcholar/post/1990287854473924609",
-      "region": "China",
-      "category": "比特币",
+      "region": "Chinese",
+      "category": "Bitcoin",
       "avatar": "./avatars/gmharryyy.jpg"
     },
     {
@@ -536,12 +536,12 @@
       "awards": [
         "Best Newcomer"
       ],
-      "topic": "较高点已下跌 77%，稳定币第一股 Circle (CRCL) 现在可以抄底了吗？",
+      "topic": "Down 77% from Highs: Is Circle (CRCL), the First Stablecoin Stock, a Buy Now?",
       "twitter": "https://x.com/hanhan4web3",
       "twitter_handle": "hanhan4web3",
       "tokenbar": "https://sosovalue.com/zh/sosocholar/post/1991822374035009538",
-      "region": "China",
-      "category": "稳定币",
+      "region": "Chinese",
+      "category": "Stablecoin",
       "avatar": "./avatars/hanhan4web3.jpg"
     },
     {
@@ -616,12 +616,12 @@
       "awards": [
         "Best Newcomer"
       ],
-      "topic": "以太坊扩容的终局 —— 性能与去中心化并存",
+      "topic": "The Endgame of Ethereum Scaling: Performance and Decentralization Coexist",
       "twitter": "https://x.com/dashuaiff",
       "twitter_handle": "dashuaiff",
       "tokenbar": "https://sosovalue.com/sosocholar/post/1995111030934958082",
-      "region": "China",
-      "category": "以太坊",
+      "region": "Chinese",
+      "category": "Ethereum",
       "avatar": "./avatars/dashuaiff.jpg"
     },
     {
@@ -632,11 +632,11 @@
       "awards": [
         "Best Newcomer"
       ],
-      "topic": "RWB新叙事崛起：从“资产代币化”迈向“业务代币化”",
+      "topic": "Rise of RWA Narrative: From Asset Tokenization to Business Tokenization",
       "twitter": "https://x.com/wenser2010",
       "twitter_handle": "wenser2010",
       "tokenbar": "https://sosovalue.com/zh/sosocholar/post/1993152842850979841",
-      "region": "China",
+      "region": "Chinese",
       "category": "RWA",
       "avatar": "./avatars/wenser2010.jpg"
     },
@@ -653,7 +653,7 @@
       "twitter_handle": "Tadle4Arnel",
       "tokenbar": "https://sosovalue.com/sososcholar/post/1972151308556533762",
       "region": "Philippines",
-      "category": "以太坊",
+      "category": "Ethereum",
       "avatar": "./avatars/Tadle4Arnel.jpg"
     }
   ],

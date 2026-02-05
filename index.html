@@ -87,7 +87,7 @@
             pointer-events: none;
         }
 
-        /* 底部聚光光晕 - 舞台效果 */
+        /* Bottom spotlight glow - stage effect */
         .hero-spotlight {
             position: absolute;
             width: 800px;
@@ -100,7 +100,7 @@
             filter: blur(60px);
         }
 
-        /* 上方金色光点 */
+        /* Gold sparkle particles */
         .gold-sparkle {
             position: absolute;
             width: 6px;
@@ -116,7 +116,7 @@
             50% { opacity: 1; transform: translateY(-30px) scale(1.5); }
         }
 
-        /* 飘动彩带 - 左侧 */
+        /* Floating ribbon - left side */
         .ribbon-left {
             position: absolute;
             top: 15%;
@@ -128,7 +128,7 @@
             opacity: 0.85;
         }
 
-        /* 飘动彩带 - 右侧 */
+        /* Floating ribbon - right side */
         .ribbon-right {
             position: absolute;
             top: 20%;
@@ -506,7 +506,7 @@
             const [isSubmitting, setIsSubmitting] = useState(false);
 
             const handleTwitterConnect = () => {
-                // Coming Soon - 暂时显示提示
+                // Coming Soon - show notification
                 alert('Twitter OAuth coming soon! For now, we will contact you via Telegram.');
             };
 
@@ -516,7 +516,7 @@
 
                 setIsSubmitting(true);
 
-                // 保存到 localStorage（临时方案）
+                // Save to localStorage (temporary solution)
                 const submissions = JSON.parse(localStorage.getItem('soso_submissions') || '[]');
                 const newSubmission = {
                     id: Date.now(),
@@ -527,7 +527,7 @@
                 submissions.push(newSubmission);
                 localStorage.setItem('soso_submissions', JSON.stringify(submissions));
 
-                // 模拟提交延迟
+                // Simulate submission delay
                 setTimeout(() => {
                     setIsSubmitting(false);
                     setSubmitted(true);
@@ -628,7 +628,7 @@
             const [showContactModal, setShowContactModal] = useState(false);
             const [scrolled, setScrolled] = useState(false);
 
-            // 监听滚动，判断是否超过首屏
+            // Listen to scroll, check if past hero section
             useEffect(() => {
                 const handleScroll = () => {
                     const heroHeight = window.innerHeight * 0.8;
@@ -639,7 +639,7 @@
             }, []);
 
             useEffect(() => {
-                // 添加时间戳防止缓存
+                // Add timestamp to prevent caching
                 fetch('./scholars_data.json?t=' + Date.now())
                     .then(response => {
                         if (!response.ok) throw new Error('Failed to load data');
@@ -713,7 +713,7 @@
                         <div className="hero-spotlight"></div>
                         <div className="hero-vignette"></div>
 
-                        {/* 飘动彩带 - 左上角 */}
+                        {/* Floating ribbon - top left */}
                         <svg className="ribbon-left" viewBox="0 0 300 200" fill="none">
                             <path d="M-20,80 Q60,20 140,60 T280,40" stroke="url(#ribbonGold1)" strokeWidth="8" fill="none" strokeLinecap="round">
                                 <animate attributeName="d" dur="6s" repeatCount="indefinite"
@@ -742,7 +742,7 @@
                             </defs>
                         </svg>
 
-                        {/* 飘动彩带 - 右上角 */}
+                        {/* Floating ribbon - top right */}
                         <svg className="ribbon-right" viewBox="0 0 280 180" fill="none">
                             <path d="M300,60 Q220,10 140,50 T0,30" stroke="url(#ribbonGold3)" strokeWidth="7" fill="none" strokeLinecap="round">
                                 <animate attributeName="d" dur="5.5s" repeatCount="indefinite"
@@ -759,8 +759,8 @@
                             </defs>
                         </svg>
 
-                        {/* 金色光点装饰 */}
-                        {/* 金色光点 - 分散在整个hero区域 */}
+                        {/* Gold sparkle decorations */}
+                        {/* Gold particles - scattered across hero area */}
                         <div className="gold-sparkle" style={{top: '15%', left: '10%', animationDelay: '0s', width: '8px', height: '8px'}}></div>
                         <div className="gold-sparkle" style={{top: '25%', left: '20%', animationDelay: '1.5s', width: '6px', height: '6px'}}></div>
                         <div className="gold-sparkle" style={{top: '35%', right: '15%', animationDelay: '0.8s', width: '10px', height: '10px'}}></div>
@@ -788,7 +788,7 @@
                                 </p>
                             </div>
 
-                            {/* Stats Section - 紧跟标题 */}
+                            {/* Stats Section - follows title */}
                             <div className="flex flex-nowrap justify-center items-center gap-6 md:gap-10">
                                 <div className="data-module">
                                     <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-[#FF7637]">{scholars.length}</div>
