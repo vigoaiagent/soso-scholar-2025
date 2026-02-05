@@ -1055,29 +1055,29 @@
                                         SoSoValue S3 Winners
                                     </span>
                                 </div>
-                                <h1 className="gradient-text-gold text-7xl md:text-[110px] leading-none mb-6" style={{overflow: 'visible', paddingRight: '10px'}}>SoSoScholar 2025</h1>
+                                <h1 className="gradient-text-gold text-4xl sm:text-6xl md:text-[110px] leading-none mb-6" style={{overflow: 'visible', paddingRight: '10px'}}>SoSoScholar 2025</h1>
                                 <p className="text-xl md:text-[22px] font-extrabold tracking-[0.15em] uppercase text-white/80 mb-12">
                                     Hall of Fame
                                 </p>
                             </div>
 
                             {/* Stats Section - follows title */}
-                            <div className="flex flex-nowrap justify-center items-center gap-6 md:gap-10">
-                                <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{scholars.length}</div>
-                                    <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_winners_label || 'Winners'}</div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-10 max-w-3xl mx-auto">
+                                <div className="data-module text-center">
+                                    <div className="text-3xl sm:text-4xl md:text-6xl font-black leading-none mb-2 text-white">{scholars.length}</div>
+                                    <div className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.15em] md:tracking-[0.2em] uppercase">{config.stats_winners_label || 'Winners'}</div>
                                 </div>
-                                <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">${(totalPrize / 1000).toFixed(0)}k</div>
-                                    <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_prize_label || 'Prize Pool'}</div>
+                                <div className="data-module text-center">
+                                    <div className="text-3xl sm:text-4xl md:text-6xl font-black leading-none mb-2 text-white">${(totalPrize / 1000).toFixed(0)}k</div>
+                                    <div className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.15em] md:tracking-[0.2em] uppercase">{config.stats_prize_label || 'Prize Pool'}</div>
                                 </div>
-                                <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{config.stats_submissions_value || '4,279'}</div>
-                                    <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_submissions_label || 'Submissions'}</div>
+                                <div className="data-module text-center">
+                                    <div className="text-3xl sm:text-4xl md:text-6xl font-black leading-none mb-2 text-white">{config.stats_submissions_value || '4,279'}</div>
+                                    <div className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.15em] md:tracking-[0.2em] uppercase">{config.stats_submissions_label || 'Submissions'}</div>
                                 </div>
-                                <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{config.stats_regions_value || '15+'}</div>
-                                    <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_regions_label || 'Regions'}</div>
+                                <div className="data-module text-center">
+                                    <div className="text-3xl sm:text-4xl md:text-6xl font-black leading-none mb-2 text-white">{config.stats_regions_value || '15+'}</div>
+                                    <div className="text-[10px] md:text-xs font-bold text-gray-400 tracking-[0.15em] md:tracking-[0.2em] uppercase">{config.stats_regions_label || 'Regions'}</div>
                                 </div>
                             </div>
                         </div>
