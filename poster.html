@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoSo Scholar 2025 - Poster Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sodex-orange: #FF7637;
+            --sodex-cyan: #00F0FF;
+            --sodex-gold: #FFD700;
+            --sodex-dark: #050505;
+        }
+        body {
+            background-color: #111;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .poster-card {
+            width: 600px;
+            height: 800px;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poster-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .poster-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+        }
+
+        .glow-gold { background: var(--sodex-gold); }
+        .glow-orange { background: var(--sodex-orange); }
+        .glow-cyan { background: var(--sodex-cyan); }
+
+        .badge {
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid;
+        }
+        .badge-gold { background: rgba(255, 215, 0, 0.15); border-color: rgba(255, 215, 0, 0.4); color: var(--sodex-gold); }
+        .badge-orange { background: rgba(255, 118, 55, 0.15); border-color: rgba(255, 118, 55, 0.4); color: var(--sodex-orange); }
+        .badge-cyan { background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.3); color: var(--sodex-cyan); }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #fff 20%, var(--sodex-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-orange {
+            background: linear-gradient(135deg, #fff 40%, var(--sodex-orange) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-cyan {
+            background: linear-gradient(135deg, #fff 40%, var(--sodex-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .selector-btn {
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .selector-btn:hover {
+            background: rgba(255,255,255,0.1);
+        }
+        .selector-btn.active {
+            background: var(--sodex-orange);
+            color: #000;
+            border-color: var(--sodex-orange);
+        }
+
+        .download-btn {
+            background: var(--sodex-orange);
+            color: #000;
+            font-weight: 800;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .download-btn:hover {
+            transform: scale(1.02);
+            background: #FF8C4A;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect, useRef } = React;
+
+        const PosterCard = ({ scholar, config }) => {
+            const tierConfig = {
+                1: { glow: 'glow-gold', badge: 'badge-gold', text: 'text-gradient-gold', color: '#FFD700', tierName: 'Excellence Tier' },
+                2: { glow: 'glow-orange', badge: 'badge-orange', text: 'text-gradient-orange', color: '#FF7637', tierName: 'Strategic Insights' },
+                3: { glow: 'glow-cyan', badge: 'badge-cyan', text: 'text-gradient-cyan', color: '#00F0FF', tierName: 'Research Contributor' },
+                4: { glow: 'glow-cyan', badge: 'badge-cyan', text: 'text-gradient-cyan', color: '#00F0FF', tierName: 'Rising Star' }
+            };
+            const tc = tierConfig[scholar.tier];
+
+            return (
+                <div className="poster-card" id="poster-content">
+                    {/* Background */}
+                    <div className="poster-grid"></div>
+                    <div className={`poster-glow ${tc.glow}`} style={{top: '-100px', right: '-100px'}}></div>
+                    <div className={`poster-glow ${tc.glow}`} style={{bottom: '-150px', left: '-100px', opacity: 0.2}}></div>
+
+                    {/* Content */}
+                    <div className="relative z-10 h-full flex flex-col p-10">
+                        {/* Header */}
+                        <div className="flex justify-between items-start mb-8">
+                            <img src="./sosovalue-logo.svg" className="h-8" alt="SoSoValue" />
+                            <div className="text-right">
+                                <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Season III</div>
+                                <div className="mono text-sm font-bold" style={{color: tc.color}}>{tc.tierName}</div>
+                            </div>
+                        </div>
+
+                        {/* Avatar & Info */}
+                        <div className="flex-1 flex flex-col items-center justify-center text-center">
+                            {/* Avatar */}
+                            <div className="mb-6" style={{
+                                width: '160px',
+                                height: '160px',
+                                borderRadius: '50%',
+                                border: `3px solid ${tc.color}`,
+                                padding: '4px',
+                                background: '#111'
+                            }}>
+                                <img
+                                    src={scholar.avatar}
+                                    style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}}
+                                    onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${scholar.name}`; }}
+                                />
+                            </div>
+
+                            {/* Name */}
+                            <h1 className={`text-5xl font-black uppercase mb-4 ${tc.text}`}>
+                                {scholar.name}
+                            </h1>
+
+                            {/* Region & Category */}
+                            <div className="flex items-center gap-3 mb-6 text-white/50">
+                                <span className="mono text-sm">{scholar.region}</span>
+                                {scholar.category && (
+                                    <>
+                                        <span>•</span>
+                                        <span className="text-sm">{scholar.category}</span>
+                                    </>
+                                )}
+                            </div>
+
+                            {/* Awards */}
+                            <div className="flex flex-wrap justify-center gap-2 mb-8">
+                                {scholar.awards.map((award, i) => (
+                                    <span key={i} className={`badge ${tc.badge}`}>{award}</span>
+                                ))}
+                            </div>
+
+                            {/* Topic */}
+                            <p className="text-white/60 text-base italic leading-relaxed max-w-md mb-8">
+                                "{scholar.topic}"
+                            </p>
+
+                            {/* Prize */}
+                            <div className="mono text-4xl font-black" style={{color: tc.color}}>
+                                {scholar.prize}
+                            </div>
+                        </div>
+
+                        {/* Footer */}
+                        <div className="flex justify-between items-end pt-6 border-t border-white/10">
+                            <div>
+                                <div className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">Twitter</div>
+                                <div className="mono text-sm text-white/60">@{scholar.twitter_handle}</div>
+                            </div>
+                            <div className="text-right">
+                                <div className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">SoSo Scholar</div>
+                                <div className="mono text-lg font-black" style={{color: tc.color}}>2025</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const App = () => {
+            const [scholars, setScholars] = useState([]);
+            const [selectedId, setSelectedId] = useState(null);
+            const [config, setConfig] = useState({});
+            const [loading, setLoading] = useState(true);
+            const [downloading, setDownloading] = useState(false);
+            const posterRef = useRef(null);
+
+            useEffect(() => {
+                fetch('./scholars_data.json?t=' + Date.now())
+                    .then(res => res.json())
+                    .then(data => {
+                        setScholars(data.scholars || []);
+                        setConfig(data.site_config || {});
+                        if (data.scholars?.length > 0) {
+                            setSelectedId(data.scholars[0].id);
+                        }
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        setLoading(false);
+                    });
+            }, []);
+
+            const selectedScholar = scholars.find(s => s.id === selectedId);
+
+            const downloadPoster = async () => {
+                if (!selectedScholar) return;
+                setDownloading(true);
+
+                try {
+                    const element = document.getElementById('poster-content');
+                    const canvas = await html2canvas(element, {
+                        scale: 2,
+                        backgroundColor: '#0a0a0a',
+                        useCORS: true,
+                        allowTaint: true
+                    });
+
+                    const link = document.createElement('a');
+                    link.download = `SoSoScholar2025_${selectedScholar.name.replace(/\s+/g, '_')}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                } catch (err) {
+                    console.error('Download failed:', err);
+                    alert('Download failed. Please try again.');
+                }
+
+                setDownloading(false);
+            };
+
+            const downloadAll = async () => {
+                setDownloading(true);
+
+                for (const scholar of scholars) {
+                    setSelectedId(scholar.id);
+                    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for render
+
+                    try {
+                        const element = document.getElementById('poster-content');
+                        const canvas = await html2canvas(element, {
+                            scale: 2,
+                            backgroundColor: '#0a0a0a',
+                            useCORS: true,
+                            allowTaint: true
+                        });
+
+                        const link = document.createElement('a');
+                        link.download = `SoSoScholar2025_${scholar.name.replace(/\s+/g, '_')}.png`;
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+
+                        await new Promise(resolve => setTimeout(resolve, 300)); // Delay between downloads
+                    } catch (err) {
+                        console.error(`Failed to download poster for ${scholar.name}:`, err);
+                    }
+                }
+
+                setDownloading(false);
+            };
+
+            if (loading) {
+                return <div className="flex items-center justify-center h-screen text-xl">Loading...</div>;
+            }
+
+            return (
+                <div className="min-h-screen p-8">
+                    <div className="max-w-7xl mx-auto">
+                        {/* Header */}
+                        <div className="mb-8">
+                            <h1 className="text-3xl font-black mb-2">SoSo Scholar 2025 - Poster Generator</h1>
+                            <p className="text-white/50">Generate individual award posters for each researcher</p>
+                        </div>
+
+                        <div className="flex gap-8">
+                            {/* Left: Selector */}
+                            <div className="w-80 flex-shrink-0">
+                                <div className="mb-4 flex gap-2">
+                                    <button
+                                        onClick={downloadPoster}
+                                        disabled={downloading || !selectedScholar}
+                                        className="download-btn flex-1"
+                                    >
+                                        {downloading ? 'Processing...' : 'Download Current'}
+                                    </button>
+                                </div>
+                                <button
+                                    onClick={downloadAll}
+                                    disabled={downloading}
+                                    className="w-full mb-6 p-3 bg-white/10 border border-white/20 rounded-lg text-sm font-bold hover:bg-white/15 transition-all"
+                                >
+                                    {downloading ? 'Downloading All...' : `Download All (${scholars.length})`}
+                                </button>
+
+                                <div className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">
+                                    Select Researcher ({scholars.length})
+                                </div>
+                                <div className="space-y-2 max-h-[600px] overflow-y-auto pr-2">
+                                    {scholars.map(s => (
+                                        <button
+                                            key={s.id}
+                                            onClick={() => setSelectedId(s.id)}
+                                            className={`selector-btn w-full text-left flex items-center gap-3 ${selectedId === s.id ? 'active' : ''}`}
+                                        >
+                                            <img
+                                                src={s.avatar}
+                                                className="w-8 h-8 rounded-full object-cover"
+                                                onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${s.name}`; }}
+                                            />
+                                            <div className="flex-1 min-w-0">
+                                                <div className="font-bold text-sm truncate">{s.name}</div>
+                                                <div className="text-xs opacity-60">Tier {s.tier} • {s.prize}</div>
+                                            </div>
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* Right: Preview */}
+                            <div className="flex-1 flex justify-center">
+                                {selectedScholar && (
+                                    <div ref={posterRef}>
+                                        <PosterCard scholar={selectedScholar} config={config} />
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
