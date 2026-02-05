@@ -9,13 +9,14 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sodex-orange: #FF7637;
-            --sodex-cyan: #00F0FF;
-            --sodex-gold: #FFD700;
-            --sodex-dark: #050505;
+            --gold: #FFD700;
+            --gold-light: #FFF4B8;
+            --orange: #FF7637;
+            --cyan: #00F0FF;
+            --dark: #0A0A0A;
         }
         body {
             background-color: #111;
@@ -23,71 +24,159 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         .mono { font-family: 'JetBrains Mono', monospace; }
+        .serif { font-family: 'Playfair Display', serif; }
 
         .poster-card {
-            width: 600px;
-            height: 800px;
-            background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+            width: 800px;
+            height: 1000px;
+            background: linear-gradient(180deg, #0d0d0d 0%, #050505 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .poster-grid {
+        /* Premium border effect */
+        .poster-border-gold {
             position: absolute;
             inset: 0;
-            background-image:
-                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(255,215,0,0.3) 0%, transparent 50%, rgba(255,215,0,0.3) 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
-        .poster-glow {
+        .poster-border-orange {
             position: absolute;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.3;
+            inset: 0;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(255,118,55,0.3) 0%, transparent 50%, rgba(255,118,55,0.3) 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
         }
 
-        .glow-gold { background: var(--sodex-gold); }
-        .glow-orange { background: var(--sodex-orange); }
-        .glow-cyan { background: var(--sodex-cyan); }
+        .poster-border-cyan {
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            background: linear-gradient(135deg, rgba(0,240,255,0.2) 0%, transparent 50%, rgba(0,240,255,0.2) 100%) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
 
-        .badge {
-            font-size: 10px;
-            font-weight: 800;
-            padding: 4px 10px;
-            border-radius: 4px;
+        /* Ambient glow */
+        .glow-gold {
+            background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
+        }
+        .glow-orange {
+            background: radial-gradient(circle, rgba(255,118,55,0.35) 0%, transparent 70%);
+        }
+        .glow-cyan {
+            background: radial-gradient(circle, rgba(0,240,255,0.25) 0%, transparent 70%);
+        }
+
+        /* Avatar ring */
+        .avatar-ring-gold {
+            background: conic-gradient(from 0deg, #FFD700, #FFA500, #FFD700, #FFEC8B, #FFD700);
+            padding: 4px;
+        }
+        .avatar-ring-orange {
+            background: conic-gradient(from 0deg, #FF7637, #FF9F5A, #FF7637, #FFB88C, #FF7637);
+            padding: 4px;
+        }
+        .avatar-ring-cyan {
+            background: conic-gradient(from 0deg, #00F0FF, #00D4FF, #00F0FF, #7FFFFF, #00F0FF);
+            padding: 3px;
+        }
+
+        /* Award badges */
+        .award-badge {
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: 1px solid;
+            letter-spacing: 0.08em;
         }
-        .badge-gold { background: rgba(255, 215, 0, 0.15); border-color: rgba(255, 215, 0, 0.4); color: var(--sodex-gold); }
-        .badge-orange { background: rgba(255, 118, 55, 0.15); border-color: rgba(255, 118, 55, 0.4); color: var(--sodex-orange); }
-        .badge-cyan { background: rgba(0, 240, 255, 0.1); border-color: rgba(0, 240, 255, 0.3); color: var(--sodex-cyan); }
+        .award-badge-gold {
+            background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(255,215,0,0.1) 100%);
+            border: 1px solid rgba(255,215,0,0.5);
+            color: #FFD700;
+            box-shadow: 0 0 20px rgba(255,215,0,0.15);
+        }
+        .award-badge-orange {
+            background: linear-gradient(135deg, rgba(255,118,55,0.2) 0%, rgba(255,118,55,0.1) 100%);
+            border: 1px solid rgba(255,118,55,0.5);
+            color: #FF7637;
+            box-shadow: 0 0 20px rgba(255,118,55,0.15);
+        }
+        .award-badge-cyan {
+            background: linear-gradient(135deg, rgba(0,240,255,0.15) 0%, rgba(0,240,255,0.05) 100%);
+            border: 1px solid rgba(0,240,255,0.4);
+            color: #00F0FF;
+            box-shadow: 0 0 20px rgba(0,240,255,0.1);
+        }
 
-        .text-gradient-gold {
-            background: linear-gradient(135deg, #fff 20%, var(--sodex-gold) 100%);
+        /* Text gradients */
+        .text-gold {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FFD700 50%, #FFA500 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .text-gradient-orange {
-            background: linear-gradient(135deg, #fff 40%, var(--sodex-orange) 100%);
+        .text-orange {
+            background: linear-gradient(135deg, #FFFFFF 20%, #FF7637 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .text-gradient-cyan {
-            background: linear-gradient(135deg, #fff 40%, var(--sodex-cyan) 100%);
+        .text-cyan {
+            background: linear-gradient(135deg, #FFFFFF 20%, #00F0FF 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        /* Prize display */
+        .prize-gold {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 30px rgba(255,215,0,0.5));
+        }
+        .prize-orange {
+            background: linear-gradient(135deg, #FF7637 0%, #FF9F5A 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 25px rgba(255,118,55,0.4));
+        }
+        .prize-cyan {
+            background: linear-gradient(135deg, #00F0FF 0%, #7FFFFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(0,240,255,0.3));
+        }
+
+        /* Decorative lines */
+        .deco-line-gold {
+            background: linear-gradient(90deg, transparent, rgba(255,215,0,0.5), transparent);
+        }
+        .deco-line-orange {
+            background: linear-gradient(90deg, transparent, rgba(255,118,55,0.4), transparent);
+        }
+        .deco-line-cyan {
+            background: linear-gradient(90deg, transparent, rgba(0,240,255,0.3), transparent);
         }
 
         .selector-btn {
-            padding: 8px 16px;
+            padding: 10px 16px;
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -95,17 +184,17 @@
             background: rgba(255,255,255,0.1);
         }
         .selector-btn.active {
-            background: var(--sodex-orange);
+            background: var(--orange);
             color: #000;
-            border-color: var(--sodex-orange);
+            border-color: var(--orange);
         }
 
         .download-btn {
-            background: var(--sodex-orange);
+            background: var(--orange);
             color: #000;
             font-weight: 800;
-            padding: 12px 24px;
-            border-radius: 10px;
+            padding: 14px 28px;
+            border-radius: 12px;
             cursor: pointer;
             transition: all 0.2s;
         }
@@ -123,88 +212,147 @@
 
         const PosterCard = ({ scholar, config }) => {
             const tierConfig = {
-                1: { glow: 'glow-gold', badge: 'badge-gold', text: 'text-gradient-gold', color: '#FFD700', tierName: 'Excellence Tier' },
-                2: { glow: 'glow-orange', badge: 'badge-orange', text: 'text-gradient-orange', color: '#FF7637', tierName: 'Strategic Insights' },
-                3: { glow: 'glow-cyan', badge: 'badge-cyan', text: 'text-gradient-cyan', color: '#00F0FF', tierName: 'Research Contributor' },
-                4: { glow: 'glow-cyan', badge: 'badge-cyan', text: 'text-gradient-cyan', color: '#00F0FF', tierName: 'Rising Star' }
+                1: {
+                    glow: 'glow-gold',
+                    border: 'poster-border-gold',
+                    badge: 'award-badge-gold',
+                    text: 'text-gold',
+                    prize: 'prize-gold',
+                    ring: 'avatar-ring-gold',
+                    line: 'deco-line-gold',
+                    color: '#FFD700',
+                    tierName: 'EXCELLENCE',
+                    tierSub: 'TIER I'
+                },
+                2: {
+                    glow: 'glow-orange',
+                    border: 'poster-border-orange',
+                    badge: 'award-badge-orange',
+                    text: 'text-orange',
+                    prize: 'prize-orange',
+                    ring: 'avatar-ring-orange',
+                    line: 'deco-line-orange',
+                    color: '#FF7637',
+                    tierName: 'STRATEGIC',
+                    tierSub: 'TIER II'
+                },
+                3: {
+                    glow: 'glow-cyan',
+                    border: 'poster-border-cyan',
+                    badge: 'award-badge-cyan',
+                    text: 'text-cyan',
+                    prize: 'prize-cyan',
+                    ring: 'avatar-ring-cyan',
+                    line: 'deco-line-cyan',
+                    color: '#00F0FF',
+                    tierName: 'CONTRIBUTOR',
+                    tierSub: 'TIER III'
+                },
+                4: {
+                    glow: 'glow-cyan',
+                    border: 'poster-border-cyan',
+                    badge: 'award-badge-cyan',
+                    text: 'text-cyan',
+                    prize: 'prize-cyan',
+                    ring: 'avatar-ring-cyan',
+                    line: 'deco-line-cyan',
+                    color: '#00F0FF',
+                    tierName: 'RISING STAR',
+                    tierSub: 'TIER IV'
+                }
             };
             const tc = tierConfig[scholar.tier];
 
             return (
                 <div className="poster-card" id="poster-content">
-                    {/* Background */}
-                    <div className="poster-grid"></div>
-                    <div className={`poster-glow ${tc.glow}`} style={{top: '-100px', right: '-100px'}}></div>
-                    <div className={`poster-glow ${tc.glow}`} style={{bottom: '-150px', left: '-100px', opacity: 0.2}}></div>
+                    {/* Border effect */}
+                    <div className={tc.border}></div>
+
+                    {/* Background glow */}
+                    <div className={`absolute ${tc.glow}`} style={{width: '600px', height: '600px', top: '-200px', right: '-200px', filter: 'blur(80px)'}}></div>
+                    <div className={`absolute ${tc.glow}`} style={{width: '500px', height: '500px', bottom: '-150px', left: '-150px', filter: 'blur(100px)', opacity: 0.5}}></div>
 
                     {/* Content */}
-                    <div className="relative z-10 h-full flex flex-col p-10">
+                    <div className="relative z-10 h-full flex flex-col px-14 py-12">
                         {/* Header */}
-                        <div className="flex justify-between items-start mb-8">
-                            <img src="./sosovalue-logo.svg" className="h-8" alt="SoSoValue" />
+                        <div className="flex justify-between items-start mb-6">
+                            <img src="./sosovalue-logo.svg" className="h-10" alt="SoSoValue" />
                             <div className="text-right">
-                                <div className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Season III</div>
-                                <div className="mono text-sm font-bold" style={{color: tc.color}}>{tc.tierName}</div>
+                                <div className="text-[11px] font-bold text-white/30 uppercase tracking-[0.3em] mb-1">S3</div>
+                                <div className="mono text-base font-bold tracking-wider" style={{color: tc.color}}>{tc.tierName}</div>
+                                <div className="mono text-xs font-medium text-white/40">{tc.tierSub}</div>
                             </div>
                         </div>
 
-                        {/* Avatar & Info */}
+                        {/* Decorative line */}
+                        <div className={`h-[1px] w-full ${tc.line} mb-10`}></div>
+
+                        {/* Main content */}
                         <div className="flex-1 flex flex-col items-center justify-center text-center">
-                            {/* Avatar */}
-                            <div className="mb-6" style={{
-                                width: '160px',
-                                height: '160px',
-                                borderRadius: '50%',
-                                border: `3px solid ${tc.color}`,
-                                padding: '4px',
-                                background: '#111'
-                            }}>
-                                <img
-                                    src={scholar.avatar}
-                                    style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}}
-                                    onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${scholar.name}`; }}
-                                />
+                            {/* Avatar with premium ring */}
+                            <div className={`${tc.ring} rounded-full mb-8`}>
+                                <div style={{
+                                    width: '200px',
+                                    height: '200px',
+                                    borderRadius: '50%',
+                                    overflow: 'hidden',
+                                    background: '#0a0a0a'
+                                }}>
+                                    <img
+                                        src={scholar.avatar}
+                                        style={{width: '100%', height: '100%', objectFit: 'cover'}}
+                                        onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${scholar.name}`; }}
+                                    />
+                                </div>
                             </div>
 
                             {/* Name */}
-                            <h1 className={`text-5xl font-black uppercase mb-4 ${tc.text}`}>
+                            <h1 className={`serif text-6xl font-black uppercase mb-3 tracking-wide ${tc.text}`}>
                                 {scholar.name}
                             </h1>
 
-                            {/* Category */}
-                            {scholar.category && (
-                                <div className="flex items-center gap-3 mb-6 text-white/50">
-                                    <span className="text-sm">{scholar.category}</span>
-                                </div>
-                            )}
+                            {/* Twitter handle */}
+                            <div className="mono text-lg text-white/40 mb-6">@{scholar.twitter_handle}</div>
 
                             {/* Awards */}
-                            <div className="flex flex-wrap justify-center gap-2 mb-8">
+                            <div className="flex flex-wrap justify-center gap-3 mb-8">
                                 {scholar.awards.map((award, i) => (
-                                    <span key={i} className={`badge ${tc.badge}`}>{award}</span>
+                                    <span key={i} className={`award-badge ${tc.badge}`}>{award}</span>
                                 ))}
                             </div>
 
+                            {/* Category */}
+                            {scholar.category && (
+                                <div className="text-sm font-semibold text-white/50 uppercase tracking-widest mb-6">
+                                    {scholar.category}
+                                </div>
+                            )}
+
                             {/* Topic */}
-                            <p className="text-white/60 text-base italic leading-relaxed max-w-md mb-8">
+                            <p className="text-white/60 text-lg italic leading-relaxed max-w-xl mb-10 px-4">
                                 "{scholar.topic}"
                             </p>
 
                             {/* Prize */}
-                            <div className="mono text-4xl font-black" style={{color: tc.color}}>
+                            <div className={`mono text-7xl font-black ${tc.prize}`}>
                                 {scholar.prize}
                             </div>
                         </div>
 
                         {/* Footer */}
-                        <div className="flex justify-between items-end pt-6 border-t border-white/10">
-                            <div>
-                                <div className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">Twitter</div>
-                                <div className="mono text-sm text-white/60">@{scholar.twitter_handle}</div>
+                        <div className={`h-[1px] w-full ${tc.line} mb-6`}></div>
+                        <div className="flex justify-between items-center">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{background: `${tc.color}20`, border: `1px solid ${tc.color}40`}}>
+                                    <svg className="w-5 h-5" fill={tc.color} viewBox="0 0 24 24">
+                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                    </svg>
+                                </div>
+                                <span className="mono text-sm text-white/50">x.com/{scholar.twitter_handle}</span>
                             </div>
                             <div className="text-right">
-                                <div className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-1">SoSo Scholar</div>
-                                <div className="mono text-lg font-black" style={{color: tc.color}}>2025</div>
+                                <div className="serif text-2xl font-black" style={{color: tc.color}}>SoSo Scholar</div>
+                                <div className="mono text-sm font-bold text-white/40">2025</div>
                             </div>
                         </div>
                     </div>
@@ -246,7 +394,7 @@
                 try {
                     const element = document.getElementById('poster-content');
                     const canvas = await html2canvas(element, {
-                        scale: 2,
+                        scale: 3,
                         backgroundColor: '#0a0a0a',
                         useCORS: true,
                         allowTaint: true
@@ -269,12 +417,12 @@
 
                 for (const scholar of scholars) {
                     setSelectedId(scholar.id);
-                    await new Promise(resolve => setTimeout(resolve, 500)); // Wait for render
+                    await new Promise(resolve => setTimeout(resolve, 600));
 
                     try {
                         const element = document.getElementById('poster-content');
                         const canvas = await html2canvas(element, {
-                            scale: 2,
+                            scale: 3,
                             backgroundColor: '#0a0a0a',
                             useCORS: true,
                             allowTaint: true
@@ -285,7 +433,7 @@
                         link.href = canvas.toDataURL('image/png');
                         link.click();
 
-                        await new Promise(resolve => setTimeout(resolve, 300)); // Delay between downloads
+                        await new Promise(resolve => setTimeout(resolve, 400));
                     } catch (err) {
                         console.error(`Failed to download poster for ${scholar.name}:`, err);
                     }
@@ -304,10 +452,10 @@
                         {/* Header */}
                         <div className="mb-8">
                             <h1 className="text-3xl font-black mb-2">SoSo Scholar 2025 - Poster Generator</h1>
-                            <p className="text-white/50">Generate individual award posters for each researcher</p>
+                            <p className="text-white/50">Generate premium award posters for each researcher</p>
                         </div>
 
-                        <div className="flex gap-8">
+                        <div className="flex gap-10">
                             {/* Left: Selector */}
                             <div className="w-80 flex-shrink-0">
                                 <div className="mb-4 flex gap-2">
@@ -330,7 +478,7 @@
                                 <div className="text-xs font-bold text-white/40 uppercase tracking-wider mb-3">
                                     Select Researcher ({scholars.length})
                                 </div>
-                                <div className="space-y-2 max-h-[600px] overflow-y-auto pr-2">
+                                <div className="space-y-2 max-h-[700px] overflow-y-auto pr-2">
                                     {scholars.map(s => (
                                         <button
                                             key={s.id}
@@ -339,7 +487,7 @@
                                         >
                                             <img
                                                 src={s.avatar}
-                                                className="w-8 h-8 rounded-full object-cover"
+                                                className="w-10 h-10 rounded-full object-cover"
                                                 onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${s.name}`; }}
                                             />
                                             <div className="flex-1 min-w-0">
