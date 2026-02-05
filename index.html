@@ -237,6 +237,10 @@
             font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 4px;
             text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid;
         }
+        .badge-lg {
+            font-size: 13px; font-weight: 800; padding: 6px 14px; border-radius: 6px;
+            text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid;
+        }
         .badge-gold { background: rgba(255, 215, 0, 0.1); border-color: rgba(255, 215, 0, 0.3); color: var(--sodex-gold); }
         .badge-orange { background: rgba(255, 118, 55, 0.1); border-color: rgba(255, 118, 55, 0.3); color: var(--sodex-orange); }
         .badge-cyan { background: rgba(0, 240, 255, 0.05); border-color: rgba(0, 240, 255, 0.2); color: var(--sodex-cyan); }
@@ -424,50 +428,56 @@
             const tc = tierConfig[s.tier];
 
             return (
-                <div className={`glass-card ${tc.glow} rounded-3xl p-6 flex flex-col justify-between h-full group relative overflow-hidden`}>
+                <div className={`glass-card ${tc.glow} rounded-3xl p-8 flex flex-col justify-between h-full group relative overflow-hidden`}>
                     <div className="relative z-10">
-                        <div className="flex justify-between items-start mb-5">
-                            <div className={`h-20 w-20 rounded-full border-2 ${tc.frame} p-1 bg-[#111] flex-shrink-0`} style={{overflow: 'hidden'}}>
+                        {/* Enlarged Avatar Section */}
+                        <div className="flex justify-between items-start mb-6">
+                            <div className={`h-28 w-28 rounded-full border-3 ${tc.frame} p-1.5 bg-[#111] flex-shrink-0 shadow-lg`} style={{overflow: 'hidden', boxShadow: `0 0 30px ${tc.color}30`}}>
                                 <img src={s.avatar} style={{width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%'}} onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/initials/svg?seed=${s.name}`; }} />
                             </div>
                             <div className="text-right">
-                                <span className="mono text-white/15 text-3xl font-black italic">#{String(idx + 1).padStart(2, '0')}</span>
+                                <span className="mono text-white/10 text-4xl font-black italic">#{String(idx + 1).padStart(2, '0')}</span>
                             </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-1.5 mb-4">
+                        {/* Enlarged Awards Badges */}
+                        <div className="flex flex-wrap gap-2 mb-5">
                             {s.awards.map((a, i) => (
-                                <span key={i} className={`badge ${tc.badge}`}>{a}</span>
+                                <span key={i} className={`badge-lg ${tc.badge}`}>{a}</span>
                             ))}
                         </div>
 
-                        <h3 className={`text-2xl font-black mb-2 tracking-tight group-hover:text-white transition-colors uppercase ${tc.text}`}>
+                        {/* Enlarged Name */}
+                        <h3 className={`text-3xl font-black mb-3 tracking-tight group-hover:text-white transition-colors uppercase ${tc.text}`}>
                             {s.name}
                         </h3>
-                        <p className="text-white/50 text-sm italic line-clamp-2 leading-relaxed mb-3">"{s.topic}"</p>
+                        {/* Enlarged Topic */}
+                        <p className="text-white/50 text-base italic line-clamp-2 leading-relaxed mb-4">"{s.topic}"</p>
                         {s.category && (
                             <div className="flex items-center gap-2">
-                                <span className="text-xs font-bold text-white/40">{s.category}</span>
+                                <span className="text-sm font-bold text-white/40">{s.category}</span>
                             </div>
                         )}
                     </div>
 
-                    <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between z-10">
+                    {/* Enlarged Footer */}
+                    <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between z-10">
                         <div className="flex gap-3">
-                            <a href={s.twitter} target="_blank" className="h-9 w-9 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
-                                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            <a href={s.twitter} target="_blank" className="h-11 w-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-black transition-all">
+                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                             </a>
                             {s.tokenbar ? (
-                                <a href={s.tokenbar} target="_blank" rel="noopener noreferrer" className="px-4 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center text-sm font-bold hover:bg-white/10 transition-all">
+                                <a href={s.tokenbar} target="_blank" rel="noopener noreferrer" className="px-5 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center text-base font-bold hover:bg-white/10 transition-all">
                                     {config.card_report_button || 'RESEARCH ↗'}
                                 </a>
                             ) : (
-                                <span className="px-4 h-9 rounded-lg bg-white/5 border border-white/10 flex items-center text-sm font-bold opacity-30 cursor-not-allowed">
+                                <span className="px-5 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center text-base font-bold opacity-30 cursor-not-allowed">
                                     RESEARCH ↗
                                 </span>
                             )}
                         </div>
-                        <div className={`mono font-bold text-lg`} style={{color: tc.color}}>{s.prize}</div>
+                        {/* Enlarged Prize */}
+                        <div className={`mono font-black text-2xl`} style={{color: tc.color}}>{s.prize}</div>
                     </div>
                 </div>
             );
@@ -489,7 +499,7 @@
                         <h2 className={`text-lg font-black italic tracking-wide uppercase ${tier === 1 ? 'text-white' : 'text-white/60'}`}>{tierInfo.name}</h2>
                         <div className={`h-[1px] flex-1 bg-gradient-to-r ${tc.line} to-transparent`}></div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {scholars.map((s, idx) => (
                             <CompactCard key={s.id} s={s} idx={startIdx + idx} config={config} />
                         ))}
