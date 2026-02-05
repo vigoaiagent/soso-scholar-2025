@@ -444,9 +444,9 @@
                         <h3 className={`text-2xl font-black mb-2 tracking-tight group-hover:text-white transition-colors uppercase ${tc.text}`}>
                             {s.name}
                         </h3>
-                        {s.topic && !s.topic.startsWith('http') && (
-                            <p className="text-white/50 text-sm italic line-clamp-2 leading-relaxed mb-3">"{s.topic}"</p>
-                        )}
+                        <p className="text-white/50 text-sm italic line-clamp-2 leading-relaxed mb-3">
+                            {s.topic && !s.topic.startsWith('http') ? `"${s.topic}"` : 'Click RESEARCH to view full article →'}
+                        </p>
                         {s.category && (
                             <div className="flex items-center gap-2">
                                 <span className="text-xs font-bold text-white/40">{s.category}</span>

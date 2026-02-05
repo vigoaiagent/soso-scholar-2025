@@ -186,11 +186,9 @@
                             </div>
 
                             {/* Topic */}
-                            {scholar.topic && !scholar.topic.startsWith('http') && (
-                                <p className="text-white/60 text-base italic leading-relaxed max-w-md mb-8">
-                                    "{scholar.topic}"
-                                </p>
-                            )}
+                            <p className="text-white/60 text-base italic leading-relaxed max-w-md mb-8">
+                                {scholar.topic && !scholar.topic.startsWith('http') ? `"${scholar.topic}"` : 'View full research on SoSoValue'}
+                            </p>
 
                             {/* Prize */}
                             <div className="mono text-4xl font-black" style={{color: tc.color}}>
