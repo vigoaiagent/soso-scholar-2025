@@ -1,0 +1,19 @@
+{
+  "name": "remotion-video",
+  "version": "1.0.0",
+  "description": "SoSoScholar 2025 Video",
+  "scripts": {
+    "start": "remotion studio",
+    "build": "remotion render SoSoScholarShowcase out/video.mp4",
+    "upgrade": "remotion upgrade"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.418",
+    "@remotion/cli": "^4.0.418",
+    "@types/react": "^18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remotion": "^4.0.418",
+    "typescript": "^5.9.3"
+  }
+}

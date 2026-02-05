@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoSo Scholar 2025 | Elite Researcher Hall of Fame</title>
+    <title>SoSoScholar2025</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg?v=5">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
@@ -26,6 +27,104 @@
             overflow-x: hidden;
         }
         .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Ark Loading Animation */
+        .ark-loader {
+            position: fixed;
+            inset: 0;
+            background: #050505;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        .ark-loader.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .ark-svg {
+            width: 400px;
+            height: auto;
+            animation: ark-sail 3s ease-in-out infinite;
+        }
+        @keyframes ark-sail {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+        .ark-glow {
+            position: absolute;
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(250, 204, 21, 0.25) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: ark-glow-pulse 2s ease-in-out infinite;
+        }
+        @keyframes ark-glow-pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        .ark-text {
+            margin-top: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            color: rgba(250, 204, 21, 0.8);
+            text-transform: uppercase;
+            animation: ark-text-fade 2s ease-in-out infinite;
+        }
+        @keyframes ark-text-fade {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        .ark-waves {
+            position: absolute;
+            bottom: 28%;
+            width: 500px;
+            height: 40px;
+        }
+        .ark-wave {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.4), transparent);
+            animation: wave-move 2s ease-in-out infinite;
+        }
+        .ark-wave:nth-child(2) { top: 10px; animation-delay: 0.3s; opacity: 0.6; }
+        .ark-wave:nth-child(3) { top: 20px; animation-delay: 0.6s; opacity: 0.3; }
+        @keyframes wave-move {
+            0%, 100% { transform: translateX(-20px) scaleX(0.8); }
+            50% { transform: translateX(20px) scaleX(1); }
+        }
+
+        /* Hero Ark Background */
+        .hero-ark {
+            position: absolute;
+            bottom: 8%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 900px;
+            height: auto;
+            opacity: 0.08;
+            z-index: 0;
+            animation: hero-ark-float 8s ease-in-out infinite;
+        }
+        @keyframes hero-ark-float {
+            0%, 100% { transform: translateX(-50%) translateY(0) rotate(-0.3deg); }
+            50% { transform: translateX(-50%) translateY(-15px) rotate(0.3deg); }
+        }
+        .hero-ark-glow {
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(250, 204, 21, 0.1) 0%, transparent 70%);
+            filter: blur(80px);
+            z-index: 0;
+        }
 
         .aurora {
             position: fixed;
@@ -415,7 +514,7 @@
 <body>
     <!-- Embedded data for local file access (fallback when fetch fails) -->
     <script>
-        window.EMBEDDED_DATA = {"meta":{"title":"SoSo Scholar 2025 | Elite Researcher Hall of Fame","season":3,"total_winners":39,"last_updated":"2026-02-04","data_source":"Lark Excel"},"scholars":[{"id":1,"name":"Dapangdun","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"BTC's Quantum Threat: A Real Existing Threat","twitter":"https://x.com/dapangdun","twitter_handle":"dapangdun","tokenbar":"https://sosovalue.com/tokenbar/post/2005531162254438401","region":"Chinese","category":"Bitcoin/Prediction Market","avatar":"./avatars/dapangdun.jpg"},{"id":2,"name":"McKenna","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"Arete Capital Hyperliquid 2026 Thesis: Housing The Entirety Of Finance","twitter":"https://x.com/Crypto_McKenna","twitter_handle":"Crypto_McKenna","tokenbar":"https://sosovalue.com/research/1978705829248204800","region":"UAE","category":"HYPE","avatar":"./avatars/Crypto_McKenna.jpg"},{"id":3,"name":"Simon","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"If you told me 6 months ago that Zcash would start absorbing Bitcoin's original use-case, I'd have laughed.","twitter":"https://x.com/simononchain","twitter_handle":"simononchain","tokenbar":"https://sosovalue.com/research/2008912533826056192","region":"USA","category":"ZEC","avatar":"./avatars/simononchain.jpg"},{"id":4,"name":"Smart Ape","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"I built a Polymarket bot and tested multiple parameter setups, here are the results ","twitter":"https://x.com/the_smart_ape","twitter_handle":"the_smart_ape","tokenbar":"https://sosovalue.com/research/2009059291816620032","region":"Morocco","category":"Prediction Market","avatar":"./avatars/the_smart_ape.jpg"},{"id":5,"name":"Stacy Murr","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"The Perp DEX Wars of 2025: Hyperliquid, Aster, Lighter, and EdgeX ","twitter":"https://x.com/stacy_muur","twitter_handle":"stacy_muur","tokenbar":"https://sosovalue.com/research/2009069257887584256","region":"Eastern Europe","category":"Perp DEX","avatar":"./avatars/stacy_muur.jpg"},{"id":6,"name":"Professor Jo","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"Stablecoins at the Center of the Digital Dollar Era","twitter":"https://x.com/0xProfessorJo","twitter_handle":"0xProfessorJo","tokenbar":"https://sosovalue.com/research/2011823985131085824","region":"Korea","category":"Stablecoin","avatar":"./avatars/0xProfessorJo.jpg"},{"id":7,"name":"Ardnxt","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"The New Perp DEX Primitive: Get Paid to Trade","twitter":"https://x.com/arndxt_xo","twitter_handle":"arndxt_xo","tokenbar":"https://sosovalue.com/research/2011816287654060032","region":"Singapore","category":"PerpDEX","avatar":"./avatars/arndxt_xo.jpg"},{"id":8,"name":"ET","tier":1,"prize":"$1,300","awards":["Best Research","Best Analysis"],"topic":"BTC's 'Black Monday': How Will Japanese Yen Rate Hikes Impact BTC Prices?","twitter":"https://x.com/CapitalAgarwood","twitter_handle":"CapitalAgarwood","tokenbar":"https://sosovalue.com/sososcholar/post/1996425524144435202","region":"Chinese","category":"Bitcoin","avatar":"./avatars/CapitalAgarwood.jpg"},{"id":9,"name":"Trading Hoe","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Survival First, Profits Second","twitter":"https://x.com/tradinghoex","twitter_handle":"tradinghoex","tokenbar":"https://sosovalue.com/research/2011811637625159680","region":"North America","category":"Narrative","avatar":"./avatars/tradinghoex.jpg"},{"id":10,"name":"Phan Đạt","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"SIGNS OF A PROJECT YOU SHOULD AVOID INVESTING IN","twitter":"https://x.com/PhanDat0612","twitter_handle":"PhanDat0612","tokenbar":"https://sosovalue.com/sososcholar/post/1960156484629831682","region":"Vietnam","category":"","avatar":"./avatars/PhanDat0612.jpg"},{"id":11,"name":"gayau","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Extreme Fear Is Not the Best Time to Buy: Analyzing Two Aspects of Structural Changes","twitter":"https://x.com/gayau_eth","twitter_handle":"gayau_eth","tokenbar":"https://sosovalue.com/sosocholar/post/1994614995004354561","region":"Chinese","category":"Trading","avatar":"./avatars/gayau_eth.jpg"},{"id":12,"name":"Panterafi","tier":2,"prize":"$1,000","awards":["Best Research"],"topic":"The Stable Coin Bible: Risk Metrics & Comparative Analysis","twitter":"https://x.com/panterafii","twitter_handle":"panterafii","tokenbar":"https://sosovalue.com/en/tokenbar/post/1991117528823595009","region":"France","category":"Stablecoin","avatar":"./avatars/panterafii.jpg"},{"id":13,"name":"Zuoye","tier":2,"prize":"$1,000","awards":["Best Research"],"topic":"The Journey of Hyperliquid","twitter":"https://x.com/zuoyeweb3","twitter_handle":"zuoyeweb3","tokenbar":"https://sosovalue.com/sososcholar/post/1978003841212833794","region":"Chinese","category":"HYPE","avatar":"./avatars/zuoyeweb3.jpg"},{"id":14,"name":"Aldrin","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Exploring BIO Protocol: Utility, Narrative, and Market Dynamics","twitter":"https://x.com/Crypto4chun","twitter_handle":"Crypto4chun","tokenbar":"https://sosovalue.com/sosocholar/post/1961107708714369025","region":"Indonesia","category":"","avatar":"./avatars/Crypto4chun.jpg"},{"id":15,"name":"FadaTech","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"SoSoValue: The Compass for Finding Real Value in 2025...","twitter":"https://x.com/normiece","twitter_handle":"normiece","tokenbar":"https://sosovalue.com/sososcholar/post/1967000739987652609","region":"Nigeria","category":"","avatar":"./avatars/normiece.jpg"},{"id":16,"name":"Bocai","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Analysis: Singapore MAS RWA Issuance Framework with 17 Token Case Studies","twitter":"https://x.com/bocaibocai_","twitter_handle":"bocaibocai_","tokenbar":"https://sosovalue.com/tokenbar/post/1993647010386243585","region":"Chinese","category":"Stablecoin","avatar":"https://unavatar.io/twitter/bocaibocai_"},{"id":17,"name":"bc1qDave","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Why it's not a sweet deal to buy $HYPE now?","twitter":"https://x.com/bc1qDave","twitter_handle":"bc1qDave","tokenbar":"https://sosovalue.com/sososcholar/post/1993216451668275201","region":"Chinese","category":"HYPE","avatar":"./avatars/bc1qDave.jpg"},{"id":18,"name":"LutzS120","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"The Hidden Force Driving Bitcoin: Global M2 - Liquidity or Illusion?","twitter":"https://x.com/Lutz_S120","twitter_handle":"Lutz_S120","tokenbar":"https://sosovalue.com/sososcholar/post/1960381393069621249","region":"Germany","category":"Macro","avatar":"./avatars/Lutz_S120.jpg"},{"id":19,"name":"Anita","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"From a16z's Asian Retreat: The Twilight of VC Empires and New Kings","twitter":"https://x.com/Anitahityou","twitter_handle":"Anitahityou","tokenbar":"https://sosovalue.com/zh/research/2008921116898639872","region":"Chinese","category":"Prediction Market, RWA, VC","avatar":"./avatars/Anitahityou.jpg"},{"id":20,"name":"Pepe is Friend","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"CRYPTO REGULATION: A PROTECTIVE SHIELD OR A BARRIER TO THE DECENTRALIZED SPIRIT?","twitter":"https://x.com/pepeisfriend","twitter_handle":"pepeisfriend","tokenbar":"https://sosovalue.com/sososcholar/post/1960507225180160002","region":"Vietnam","category":"SOSO","avatar":"./avatars/pepeisfriend.jpg"},{"id":21,"name":"i_am_meme","tier":3,"prize":"$800","awards":["Best Analysis"],"topic":"What the hell is Difficulty and why does it dare to decide BTC price?","twitter":"https://x.com/iammeme84","twitter_handle":"iammeme84","tokenbar":"https://sosovalue.com/sososcholar/post/1991431762314612738","region":"Vietnam","category":"Bitcoin Mining","avatar":"./avatars/iammeme84.jpg"},{"id":22,"name":"shisi","tier":3,"prize":"$800","awards":["Best Research"],"topic":"Reflections on MEV, Sequencing Mechanisms and Power Evolution - Part 1","twitter":"https://x.com/c_luyishisi","twitter_handle":"c_luyishisi","tokenbar":"https://sosovalue.com/tokenbar/post/1989711112855040002","region":"Chinese","category":"DEFI","avatar":"./avatars/c_luyishisi.jpg"},{"id":23,"name":"IZU","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"My Complete Altcoin Research Playbook","twitter":"https://x.com/izu_crypt","twitter_handle":"izu_crypt","tokenbar":"https://sosovalue.com/research/2013277106877325312","region":"Africa","category":"Altcoins","avatar":"./avatars/izu_crypt.jpg"},{"id":24,"name":"GOODLUCK CHIMEZIE EJIOFOR","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"#SoSoScholar2025 @SoSoValueCrypto Why I'm Bullish on $SOSO","twitter":"https://x.com/goodybtc","twitter_handle":"goodybtc","tokenbar":"https://sosovalue.com/tokenbar/post/1965815758531657730","region":"South Africa","category":"SOSO","avatar":"./avatars/goodybtc.jpg"},{"id":25,"name":"ZJ","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"Dessert for Dinner: Crypto's Obsession with Buybacks","twitter":"https://x.com/0xslayerrrr","twitter_handle":"0xslayerrrr","tokenbar":"https://sosovalue.com/tc/sososcholar/post/2012118270893961217","region":"USA","category":"","avatar":"./avatars/0xslayerrrr.jpg"},{"id":26,"name":"Nuri","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"The Rise of Bots and the Imperative of Human Verification: A Critical Analysis","twitter":"https://x.com/cryptobi_nuri","twitter_handle":"cryptobi_nuri","tokenbar":"https://sosovalue.com/tokenbar/post/1971860796383379458","region":"Turkey","category":"","avatar":"./avatars/cryptobi_nuri.jpg"},{"id":27,"name":"cryptoboy777","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"The Unbundling of Binance: Why SoDEX and the 'Sovereign Exchange' Model Are the Next Trillion-Dollar Narrative","twitter":"https://x.com/Cryptotelugu12","twitter_handle":"Cryptotelugu12","tokenbar":"https://sosovalue.com/sososcholar/post/2004926721459245057?inviteCode=418A10DP","region":"India","category":"SoDEX","avatar":"./avatars/Cryptotelugu12.jpg"},{"id":28,"name":"JellyZ","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"Multi-Period MACD Linear Prediction Strategy Backtest","twitter":"https://x.com/JellyZhouishere","twitter_handle":"JellyZhouishere","tokenbar":"https://sosovalue.com/sososcholar/post/1995048144468279297","region":"Chinese","category":"Technical Analysis","avatar":"./avatars/JellyZhouishere.jpg"},{"id":29,"name":"Murphy","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"BTC Key Support and Resistance Level Dynamics","twitter":"https://x.com/Murphychen888","twitter_handle":"Murphychen888","tokenbar":"https://x.com/Murphychen888/status/1970403981727076568","region":"Chinese","category":"Bitcoin","avatar":"./avatars/Murphychen888.jpg"},{"id":30,"name":"XingGPT","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Autumn Bull Market Offensive - A Feast of Liquidity","twitter":"https://x.com/xingpt","twitter_handle":"xingpt","tokenbar":"https://sosovalue.com/sosocholar/post/1968945825963196418","region":"Chinese","category":"","avatar":"./avatars/xingpt.jpg"},{"id":31,"name":"HarryM","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Research on the Risks of Crowded BTC Basis Trading","twitter":"https://x.com/gmharryyy","twitter_handle":"gmharryyy","tokenbar":"https://sosovalue.com/zh/sososcholar/post/1990287854473924609","region":"Chinese","category":"Bitcoin","avatar":"./avatars/gmharryyy.jpg"},{"id":32,"name":"Hanhan","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Down 77% from Highs: Is Circle (CRCL), the First Stablecoin Stock, a Buy Now?","twitter":"https://x.com/hanhan4web3","twitter_handle":"hanhan4web3","tokenbar":"https://sosovalue.com/zh/sosocholar/post/1991822374035009538","region":"Chinese","category":"Stablecoin","avatar":"./avatars/hanhan4web3.jpg"},{"id":33,"name":"Lucky","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"The Collapse of LUNA: From the Dream of a Decentralized Stablecoin to a Historic Crypto Tragedy","twitter":"https://x.com/geminigoldsaint","twitter_handle":"geminigoldsaint","tokenbar":"https://sosovalue.com/sososcholar/post/1959462677922779138","region":"Indonesia","category":"LUNA","avatar":"./avatars/geminigoldsaint.jpg"},{"id":34,"name":"RiverLee","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Solana ($SOL): Why Today Is the Day to Buy Into Web3's Fastest Ecosystem (With SoSoValue Data)","twitter":"https://x.com/riverlee99","twitter_handle":"riverlee99","tokenbar":"https://sosovalue.com/sosocholar/post/1960508237773479937","region":"Vietnam","category":"","avatar":"./avatars/riverlee99.jpg"},{"id":35,"name":"Vicky","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Liquidity drives crypto cycles.","twitter":"https://x.com/vickydiamond21","twitter_handle":"vickydiamond21","tokenbar":"https://sosovalue.com/sosocholar/post/1990954820322807809","region":"Africa","category":"","avatar":"./avatars/vickydiamond21.jpg"},{"id":36,"name":"bogia","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Analysis of $SOSO's Potential","twitter":"https://x.com/CayairdropX","twitter_handle":"CayairdropX","tokenbar":"https://sosovalue.com/sosocholar/post/1959823181995114497","region":"Vietnam","category":"","avatar":"./avatars/CayairdropX.jpg"},{"id":37,"name":"Marshal","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"The Endgame of Ethereum Scaling: Performance and Decentralization Coexist","twitter":"https://x.com/dashuaiff","twitter_handle":"dashuaiff","tokenbar":"https://sosovalue.com/sosocholar/post/1995111030934958082","region":"Chinese","category":"Ethereum","avatar":"./avatars/dashuaiff.jpg"},{"id":38,"name":"Wenser","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Rise of RWA Narrative: From Asset Tokenization to Business Tokenization","twitter":"https://x.com/wenser2010","twitter_handle":"wenser2010","tokenbar":"https://sosovalue.com/zh/sosocholar/post/1993152842850979841","region":"Chinese","category":"RWA","avatar":"./avatars/wenser2010.jpg"},{"id":39,"name":"Arnel","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Best Crypto Investment Target for 2025: Ethereum","twitter":"https://x.com/Tadle4Arnel","twitter_handle":"Tadle4Arnel","tokenbar":"https://sosovalue.com/sososcholar/post/1972151308556533762","region":"Philippines","category":"Ethereum","avatar":"./avatars/Tadle4Arnel.jpg"}],"tiers":{"1":{"name":"Excellence Tier","prize_range":"$1,300 - $1,800","color":"#FFD700"},"2":{"name":"Strategic Insights","prize_range":"$1,000","color":"#FF7637"},"3":{"name":"Research Contributors","prize_range":"$500 - $800","color":"#00F0FF"},"4":{"name":"Rising Stars","prize_range":"$200","color":"#00F0FF"}},"site_config":{"site_title":"SoSo Scholar 2025 | Elite Researcher Hall of Fame","season":"3","last_updated":"2025-02-03","navbar_logo":"./sosovalue-logo.svg","navbar_brand":"SoSo Scholar 2025","navbar_subtitle":"HALL_OF_FAME","apply_button_text":"Apply S4","apply_email":"sososcholar@sosovalue.com","hero_badge_text":"S3 Winners Announced","hero_title_line1":"SOSO SCHOLAR","hero_title_line2":"RANKINGS","hero_title_year":"2025","hero_description":"Celebrating {count} elite researchers who defined the new standard of crypto intelligence in S3.","stats_winners_label":"Winners","stats_prize_label":"Prize Pool","stats_regions_label":"Regions","stats_regions_value":"15+","cta_title_line1":"CLAIM YOUR","cta_title_line2":"RANK.","cta_description":"The search for Season IV scholars begins soon. Submit your data, prove your thesis, and join the elite ranks.","cta_button_text":"Apply for S4","footer_brand":"SoSo Scholar Hall of Fame","footer_copyright":"© 2025 SoSoValue. All Rights Reserved","footer_twitter_url":"https://x.com/SoSoValueCrypto","footer_twitter_text":"X / TWITTER","footer_website_url":"https://sosovalue.com","footer_website_text":"SOSOVALUE","card_report_button":"RESEARCH ↗","color_orange":"#FF7637","color_cyan":"#00F0FF","color_gold":"#FFD700","color_dark":"#050505"}};
+        window.EMBEDDED_DATA = {"meta":{"title":"SoSoScholar 2025 | Elite Researcher Hall of Fame","season":3,"total_winners":39,"last_updated":"2026-02-04","data_source":"Lark Excel"},"scholars":[{"id":1,"name":"Dapangdun","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"BTC's Quantum Threat: A Real Existing Threat","twitter":"https://x.com/dapangdun","twitter_handle":"dapangdun","tokenbar":"https://sosovalue.com/tokenbar/post/2005531162254438401","region":"Chinese","category":"Bitcoin/Prediction Market","avatar":"./avatars/dapangdun.jpg"},{"id":2,"name":"McKenna","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"Arete Capital Hyperliquid 2026 Thesis: Housing The Entirety Of Finance","twitter":"https://x.com/Crypto_McKenna","twitter_handle":"Crypto_McKenna","tokenbar":"https://sosovalue.com/research/1978705829248204800","region":"UAE","category":"HYPE","avatar":"./avatars/Crypto_McKenna.jpg"},{"id":3,"name":"Simon","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"If you told me 6 months ago that Zcash would start absorbing Bitcoin's original use-case, I'd have laughed.","twitter":"https://x.com/simononchain","twitter_handle":"simononchain","tokenbar":"https://sosovalue.com/research/2008912533826056192","region":"USA","category":"ZEC","avatar":"./avatars/simononchain.jpg"},{"id":4,"name":"Smart Ape","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"I built a Polymarket bot and tested multiple parameter setups, here are the results ","twitter":"https://x.com/the_smart_ape","twitter_handle":"the_smart_ape","tokenbar":"https://sosovalue.com/research/2009059291816620032","region":"Morocco","category":"Prediction Market","avatar":"./avatars/the_smart_ape.jpg"},{"id":5,"name":"Stacy Murr","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"The Perp DEX Wars of 2025: Hyperliquid, Aster, Lighter, and EdgeX ","twitter":"https://x.com/stacy_muur","twitter_handle":"stacy_muur","tokenbar":"https://sosovalue.com/research/2009069257887584256","region":"Eastern Europe","category":"Perp DEX","avatar":"./avatars/stacy_muur.jpg"},{"id":6,"name":"Professor Jo","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"Stablecoins at the Center of the Digital Dollar Era","twitter":"https://x.com/0xProfessorJo","twitter_handle":"0xProfessorJo","tokenbar":"https://sosovalue.com/research/2011823985131085824","region":"Korea","category":"Stablecoin","avatar":"./avatars/0xProfessorJo.jpg"},{"id":7,"name":"Ardnxt","tier":1,"prize":"$1,800","awards":["Best Research","Best Analysis","Most Popular"],"topic":"The New Perp DEX Primitive: Get Paid to Trade","twitter":"https://x.com/arndxt_xo","twitter_handle":"arndxt_xo","tokenbar":"https://sosovalue.com/research/2011816287654060032","region":"Singapore","category":"PerpDEX","avatar":"./avatars/arndxt_xo.jpg"},{"id":8,"name":"ET","tier":1,"prize":"$1,300","awards":["Best Research","Best Analysis"],"topic":"BTC's 'Black Monday': How Will Japanese Yen Rate Hikes Impact BTC Prices?","twitter":"https://x.com/CapitalAgarwood","twitter_handle":"CapitalAgarwood","tokenbar":"https://sosovalue.com/sososcholar/post/1996425524144435202","region":"Chinese","category":"Bitcoin","avatar":"./avatars/CapitalAgarwood.jpg"},{"id":9,"name":"Trading Hoe","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Survival First, Profits Second","twitter":"https://x.com/tradinghoex","twitter_handle":"tradinghoex","tokenbar":"https://sosovalue.com/research/2011811637625159680","region":"North America","category":"Narrative","avatar":"./avatars/tradinghoex.jpg"},{"id":10,"name":"Phan Đạt","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"SIGNS OF A PROJECT YOU SHOULD AVOID INVESTING IN","twitter":"https://x.com/PhanDat0612","twitter_handle":"PhanDat0612","tokenbar":"https://sosovalue.com/sososcholar/post/1960156484629831682","region":"Vietnam","category":"","avatar":"./avatars/PhanDat0612.jpg"},{"id":11,"name":"gayau","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Extreme Fear Is Not the Best Time to Buy: Analyzing Two Aspects of Structural Changes","twitter":"https://x.com/gayau_eth","twitter_handle":"gayau_eth","tokenbar":"https://sosovalue.com/sosocholar/post/1994614995004354561","region":"Chinese","category":"Trading","avatar":"./avatars/gayau_eth.jpg"},{"id":12,"name":"Panterafi","tier":2,"prize":"$1,000","awards":["Best Research"],"topic":"The Stable Coin Bible: Risk Metrics & Comparative Analysis","twitter":"https://x.com/panterafii","twitter_handle":"panterafii","tokenbar":"https://sosovalue.com/en/tokenbar/post/1991117528823595009","region":"France","category":"Stablecoin","avatar":"./avatars/panterafii.jpg"},{"id":13,"name":"Zuoye","tier":2,"prize":"$1,000","awards":["Best Research"],"topic":"The Journey of Hyperliquid","twitter":"https://x.com/zuoyeweb3","twitter_handle":"zuoyeweb3","tokenbar":"https://sosovalue.com/sososcholar/post/1978003841212833794","region":"Chinese","category":"HYPE","avatar":"./avatars/zuoyeweb3.jpg"},{"id":14,"name":"Aldrin","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Exploring BIO Protocol: Utility, Narrative, and Market Dynamics","twitter":"https://x.com/Crypto4chun","twitter_handle":"Crypto4chun","tokenbar":"https://sosovalue.com/sosocholar/post/1961107708714369025","region":"Indonesia","category":"","avatar":"./avatars/Crypto4chun.jpg"},{"id":15,"name":"FadaTech","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"SoSoValue: The Compass for Finding Real Value in 2025...","twitter":"https://x.com/normiece","twitter_handle":"normiece","tokenbar":"https://sosovalue.com/sososcholar/post/1967000739987652609","region":"Nigeria","category":"","avatar":"./avatars/normiece.jpg"},{"id":16,"name":"Bocai","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Analysis: Singapore MAS RWA Issuance Framework with 17 Token Case Studies","twitter":"https://x.com/bocaibocai_","twitter_handle":"bocaibocai_","tokenbar":"https://sosovalue.com/tokenbar/post/1993647010386243585","region":"Chinese","category":"Stablecoin","avatar":"https://unavatar.io/twitter/bocaibocai_"},{"id":17,"name":"bc1qDave","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"Why it's not a sweet deal to buy $HYPE now?","twitter":"https://x.com/bc1qDave","twitter_handle":"bc1qDave","tokenbar":"https://sosovalue.com/sososcholar/post/1993216451668275201","region":"Chinese","category":"HYPE","avatar":"./avatars/bc1qDave.jpg"},{"id":18,"name":"LutzS120","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"The Hidden Force Driving Bitcoin: Global M2 - Liquidity or Illusion?","twitter":"https://x.com/Lutz_S120","twitter_handle":"Lutz_S120","tokenbar":"https://sosovalue.com/sososcholar/post/1960381393069621249","region":"Germany","category":"Macro","avatar":"./avatars/Lutz_S120.jpg"},{"id":19,"name":"Anita","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"From a16z's Asian Retreat: The Twilight of VC Empires and New Kings","twitter":"https://x.com/Anitahityou","twitter_handle":"Anitahityou","tokenbar":"https://sosovalue.com/zh/research/2008921116898639872","region":"Chinese","category":"Prediction Market, RWA, VC","avatar":"./avatars/Anitahityou.jpg"},{"id":20,"name":"Pepe is Friend","tier":2,"prize":"$1,000","awards":["Best Analysis","Most Popular"],"topic":"CRYPTO REGULATION: A PROTECTIVE SHIELD OR A BARRIER TO THE DECENTRALIZED SPIRIT?","twitter":"https://x.com/pepeisfriend","twitter_handle":"pepeisfriend","tokenbar":"https://sosovalue.com/sososcholar/post/1960507225180160002","region":"Vietnam","category":"SOSO","avatar":"./avatars/pepeisfriend.jpg"},{"id":21,"name":"i_am_meme","tier":3,"prize":"$800","awards":["Best Analysis"],"topic":"What the hell is Difficulty and why does it dare to decide BTC price?","twitter":"https://x.com/iammeme84","twitter_handle":"iammeme84","tokenbar":"https://sosovalue.com/sososcholar/post/1991431762314612738","region":"Vietnam","category":"Bitcoin Mining","avatar":"./avatars/iammeme84.jpg"},{"id":22,"name":"shisi","tier":3,"prize":"$800","awards":["Best Research"],"topic":"Reflections on MEV, Sequencing Mechanisms and Power Evolution - Part 1","twitter":"https://x.com/c_luyishisi","twitter_handle":"c_luyishisi","tokenbar":"https://sosovalue.com/tokenbar/post/1989711112855040002","region":"Chinese","category":"DEFI","avatar":"./avatars/c_luyishisi.jpg"},{"id":23,"name":"IZU","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"My Complete Altcoin Research Playbook","twitter":"https://x.com/izu_crypt","twitter_handle":"izu_crypt","tokenbar":"https://sosovalue.com/research/2013277106877325312","region":"Africa","category":"Altcoins","avatar":"./avatars/izu_crypt.jpg"},{"id":24,"name":"GOODLUCK CHIMEZIE EJIOFOR","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"#SoSoScholar2025 @SoSoValueCrypto Why I'm Bullish on $SOSO","twitter":"https://x.com/goodybtc","twitter_handle":"goodybtc","tokenbar":"https://sosovalue.com/tokenbar/post/1965815758531657730","region":"South Africa","category":"SOSO","avatar":"./avatars/goodybtc.jpg"},{"id":25,"name":"ZJ","tier":3,"prize":"$500","awards":["Most Popular"],"topic":"Dessert for Dinner: Crypto's Obsession with Buybacks","twitter":"https://x.com/0xslayerrrr","twitter_handle":"0xslayerrrr","tokenbar":"https://sosovalue.com/tc/sososcholar/post/2012118270893961217","region":"USA","category":"","avatar":"./avatars/0xslayerrrr.jpg"},{"id":26,"name":"Nuri","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"The Rise of Bots and the Imperative of Human Verification: A Critical Analysis","twitter":"https://x.com/cryptobi_nuri","twitter_handle":"cryptobi_nuri","tokenbar":"https://sosovalue.com/tokenbar/post/1971860796383379458","region":"Turkey","category":"","avatar":"./avatars/cryptobi_nuri.jpg"},{"id":27,"name":"cryptoboy777","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"The Unbundling of Binance: Why SoDEX and the 'Sovereign Exchange' Model Are the Next Trillion-Dollar Narrative","twitter":"https://x.com/Cryptotelugu12","twitter_handle":"Cryptotelugu12","tokenbar":"https://sosovalue.com/sososcholar/post/2004926721459245057?inviteCode=418A10DP","region":"India","category":"SoDEX","avatar":"./avatars/Cryptotelugu12.jpg"},{"id":28,"name":"JellyZ","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"Multi-Period MACD Linear Prediction Strategy Backtest","twitter":"https://x.com/JellyZhouishere","twitter_handle":"JellyZhouishere","tokenbar":"https://sosovalue.com/sososcholar/post/1995048144468279297","region":"Chinese","category":"Technical Analysis","avatar":"./avatars/JellyZhouishere.jpg"},{"id":29,"name":"Murphy","tier":3,"prize":"$500","awards":["Best Analysis"],"topic":"BTC Key Support and Resistance Level Dynamics","twitter":"https://x.com/Murphychen888","twitter_handle":"Murphychen888","tokenbar":"https://x.com/Murphychen888/status/1970403981727076568","region":"Chinese","category":"Bitcoin","avatar":"./avatars/Murphychen888.jpg"},{"id":30,"name":"XingGPT","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Autumn Bull Market Offensive - A Feast of Liquidity","twitter":"https://x.com/xingpt","twitter_handle":"xingpt","tokenbar":"https://sosovalue.com/sosocholar/post/1968945825963196418","region":"Chinese","category":"","avatar":"./avatars/xingpt.jpg"},{"id":31,"name":"HarryM","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Research on the Risks of Crowded BTC Basis Trading","twitter":"https://x.com/gmharryyy","twitter_handle":"gmharryyy","tokenbar":"https://sosovalue.com/zh/sososcholar/post/1990287854473924609","region":"Chinese","category":"Bitcoin","avatar":"./avatars/gmharryyy.jpg"},{"id":32,"name":"Hanhan","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Down 77% from Highs: Is Circle (CRCL), the First Stablecoin Stock, a Buy Now?","twitter":"https://x.com/hanhan4web3","twitter_handle":"hanhan4web3","tokenbar":"https://sosovalue.com/zh/sosocholar/post/1991822374035009538","region":"Chinese","category":"Stablecoin","avatar":"./avatars/hanhan4web3.jpg"},{"id":33,"name":"Lucky","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"The Collapse of LUNA: From the Dream of a Decentralized Stablecoin to a Historic Crypto Tragedy","twitter":"https://x.com/geminigoldsaint","twitter_handle":"geminigoldsaint","tokenbar":"https://sosovalue.com/sososcholar/post/1959462677922779138","region":"Indonesia","category":"LUNA","avatar":"./avatars/geminigoldsaint.jpg"},{"id":34,"name":"RiverLee","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Solana ($SOL): Why Today Is the Day to Buy Into Web3's Fastest Ecosystem (With SoSoValue Data)","twitter":"https://x.com/riverlee99","twitter_handle":"riverlee99","tokenbar":"https://sosovalue.com/sosocholar/post/1960508237773479937","region":"Vietnam","category":"","avatar":"./avatars/riverlee99.jpg"},{"id":35,"name":"Vicky","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Liquidity drives crypto cycles.","twitter":"https://x.com/vickydiamond21","twitter_handle":"vickydiamond21","tokenbar":"https://sosovalue.com/sosocholar/post/1990954820322807809","region":"Africa","category":"","avatar":"./avatars/vickydiamond21.jpg"},{"id":36,"name":"bogia","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Analysis of $SOSO's Potential","twitter":"https://x.com/CayairdropX","twitter_handle":"CayairdropX","tokenbar":"https://sosovalue.com/sosocholar/post/1959823181995114497","region":"Vietnam","category":"","avatar":"./avatars/CayairdropX.jpg"},{"id":37,"name":"Marshal","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"The Endgame of Ethereum Scaling: Performance and Decentralization Coexist","twitter":"https://x.com/dashuaiff","twitter_handle":"dashuaiff","tokenbar":"https://sosovalue.com/sosocholar/post/1995111030934958082","region":"Chinese","category":"Ethereum","avatar":"./avatars/dashuaiff.jpg"},{"id":38,"name":"Wenser","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Rise of RWA Narrative: From Asset Tokenization to Business Tokenization","twitter":"https://x.com/wenser2010","twitter_handle":"wenser2010","tokenbar":"https://sosovalue.com/zh/sosocholar/post/1993152842850979841","region":"Chinese","category":"RWA","avatar":"./avatars/wenser2010.jpg"},{"id":39,"name":"Arnel","tier":4,"prize":"$200","awards":["Best Newcomer"],"topic":"Best Crypto Investment Target for 2025: Ethereum","twitter":"https://x.com/Tadle4Arnel","twitter_handle":"Tadle4Arnel","tokenbar":"https://sosovalue.com/sososcholar/post/1972151308556533762","region":"Philippines","category":"Ethereum","avatar":"./avatars/Tadle4Arnel.jpg"}],"tiers":{"1":{"name":"Excellence Tier","prize_range":"$1,300 - $1,800","color":"#FFD700"},"2":{"name":"Strategic Insights","prize_range":"$1,000","color":"#FF7637"},"3":{"name":"Research Contributors","prize_range":"$500 - $800","color":"#00F0FF"},"4":{"name":"Rising Stars","prize_range":"$200","color":"#00F0FF"}},"site_config":{"site_title":"SoSoScholar 2025 | Elite Researcher Hall of Fame","season":"3","last_updated":"2025-02-03","navbar_logo":"./sosovalue-logo.svg","navbar_brand":"SoSoScholar 2025","navbar_subtitle":"HALL_OF_FAME","apply_button_text":"Apply S4","apply_email":"sososcholar@sosovalue.com","hero_badge_text":"S3 Winners Announced","hero_title_line1":"SOSO SCHOLAR","hero_title_line2":"RANKINGS","hero_title_year":"2025","hero_description":"Celebrating {count} elite researchers who defined the new standard of crypto intelligence in S3.","stats_winners_label":"Winners","stats_prize_label":"Prize Pool","stats_regions_label":"Regions","stats_regions_value":"15+","cta_title_line1":"CLAIM YOUR","cta_title_line2":"RANK.","cta_description":"The search for Season IV scholars begins soon. Submit your data, prove your thesis, and join the elite ranks.","cta_button_text":"Apply for S4","footer_brand":"SoSoScholar Hall of Fame","footer_copyright":"© 2025 SoSoValue. All Rights Reserved","footer_twitter_url":"https://x.com/SoSoValueCrypto","footer_twitter_text":"X / TWITTER","footer_website_url":"https://sosovalue.com","footer_website_text":"SOSOVALUE","card_report_button":"RESEARCH ↗","color_orange":"#FF7637","color_cyan":"#00F0FF","color_gold":"#FFD700","color_dark":"#050505"}};
     </script>
 
     <div id="root"><div class="loading">Loading scholars data...</div></div>
@@ -636,12 +735,112 @@
             );
         };
 
+        // Ark SVG Component - Modern Futuristic Design
+        const ArkSVG = ({ className, style }) => (
+            <svg className={className} style={style} viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Main Hull - Sleek modern shape */}
+                <path d="M40 140 C60 170 340 170 360 140 L340 100 C300 105 100 105 60 100 Z"
+                      fill="url(#hullGradient)" stroke="url(#goldStroke)" strokeWidth="2"/>
+
+                {/* Hull highlight line */}
+                <path d="M70 130 Q200 140 330 130" stroke="#FACC15" strokeWidth="1" opacity="0.4"/>
+                <path d="M80 145 Q200 155 320 145" stroke="#FACC15" strokeWidth="0.5" opacity="0.2"/>
+
+                {/* Deck Platform */}
+                <path d="M70 100 L330 100 L310 80 C260 85 140 85 90 80 Z"
+                      fill="url(#deckGradient)" stroke="#FACC15" strokeWidth="1.5"/>
+
+                {/* Central Structure - Futuristic bridge */}
+                <path d="M140 80 L260 80 L250 45 C230 40 170 40 150 45 Z"
+                      fill="url(#bridgeGradient)" stroke="#FACC15" strokeWidth="1.5"/>
+
+                {/* Bridge Windows - Horizontal strip */}
+                <rect x="155" y="55" width="90" height="12" rx="2" fill="#050505" stroke="#FACC15" strokeWidth="1"/>
+                <line x1="175" y1="55" x2="175" y2="67" stroke="#FACC15" strokeWidth="0.5" opacity="0.5"/>
+                <line x1="200" y1="55" x2="200" y2="67" stroke="#FACC15" strokeWidth="0.5" opacity="0.5"/>
+                <line x1="225" y1="55" x2="225" y2="67" stroke="#FACC15" strokeWidth="0.5" opacity="0.5"/>
+
+                {/* Antenna/Mast */}
+                <line x1="200" y1="45" x2="200" y2="20" stroke="#FACC15" strokeWidth="2"/>
+                <circle cx="200" cy="18" r="4" fill="#050505" stroke="#FACC15" strokeWidth="1.5"/>
+                <circle cx="200" cy="18" r="2" fill="#FACC15" opacity="0.8">
+                    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+                </circle>
+
+                {/* Side wings/fins */}
+                <path d="M60 100 L30 85 L50 95" fill="url(#wingGradient)" stroke="#FACC15" strokeWidth="1"/>
+                <path d="M340 100 L370 85 L350 95" fill="url(#wingGradient)" stroke="#FACC15" strokeWidth="1"/>
+
+                {/* Engine glow indicators */}
+                <ellipse cx="100" cy="150" rx="15" ry="5" fill="#FACC15" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.5s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="300" cy="150" rx="15" ry="5" fill="#FACC15" opacity="0.3">
+                    <animate attributeName="opacity" values="0.2;0.5;0.2" dur="1.5s" repeatCount="indefinite" begin="0.3s"/>
+                </ellipse>
+
+                {/* Tech lines on hull */}
+                <path d="M90 115 L150 115" stroke="#FACC15" strokeWidth="0.5" opacity="0.3"/>
+                <path d="M250 115 L310 115" stroke="#FACC15" strokeWidth="0.5" opacity="0.3"/>
+
+                <defs>
+                    <linearGradient id="hullGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#FACC15" stopOpacity="0.15"/>
+                        <stop offset="50%" stopColor="#FACC15" stopOpacity="0.08"/>
+                        <stop offset="100%" stopColor="#FACC15" stopOpacity="0.02"/>
+                    </linearGradient>
+                    <linearGradient id="deckGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#FACC15" stopOpacity="0.12"/>
+                        <stop offset="100%" stopColor="#FACC15" stopOpacity="0.04"/>
+                    </linearGradient>
+                    <linearGradient id="bridgeGradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" stopColor="#FACC15" stopOpacity="0.1"/>
+                        <stop offset="100%" stopColor="#FACC15" stopOpacity="0.2"/>
+                    </linearGradient>
+                    <linearGradient id="wingGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#FACC15" stopOpacity="0.05"/>
+                        <stop offset="100%" stopColor="#FACC15" stopOpacity="0.15"/>
+                    </linearGradient>
+                    <linearGradient id="goldStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#FACC15" stopOpacity="0.3"/>
+                        <stop offset="50%" stopColor="#FACC15" stopOpacity="0.8"/>
+                        <stop offset="100%" stopColor="#FACC15" stopOpacity="0.3"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+        );
+
+        // Ark Loading Screen Component
+        const ArkLoader = ({ isVisible }) => (
+            <div className={`ark-loader ${!isVisible ? 'fade-out' : ''}`}>
+                <div className="ark-glow"></div>
+                <ArkSVG className="ark-svg" />
+                <div className="ark-waves">
+                    <div className="ark-wave"></div>
+                    <div className="ark-wave"></div>
+                    <div className="ark-wave"></div>
+                </div>
+                <div className="ark-text">The New Ark</div>
+            </div>
+        );
+
         const App = () => {
             const [data, setData] = useState(null);
             const [loading, setLoading] = useState(true);
             const [error, setError] = useState(null);
             const [showContactModal, setShowContactModal] = useState(false);
             const [scrolled, setScrolled] = useState(false);
+            const [showLoader, setShowLoader] = useState(true);
+
+            // Hide loader after data loads + animation time
+            useEffect(() => {
+                if (!loading && data) {
+                    const timer = setTimeout(() => {
+                        setShowLoader(false);
+                    }, 2000); // Show ark for 2 seconds after data loads
+                    return () => clearTimeout(timer);
+                }
+            }, [loading, data]);
 
             // Listen to scroll, check if past hero section
             useEffect(() => {
@@ -708,25 +907,52 @@
 
             return (
                 <div className="min-h-screen relative pb-20">
+                    {/* Ark Loading Animation */}
+                    <ArkLoader isVisible={showLoader} />
+
                     <div className="aurora"></div>
                     <div className="grid-mesh"></div>
 
                     {/* Navbar */}
                     <nav className="px-6 md:px-10 py-5 flex justify-between items-center border-b border-white/5 backdrop-blur-3xl sticky top-0 z-[100]">
                         <div className="flex items-center gap-4">
-                            <img src={config.navbar_logo || "./sosovalue-logo.svg"} className="h-8" alt="Logo" />
-                            <div className={`hidden sm:block h-6 w-[1px] bg-white/10 transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
-                            <div className={`hidden sm:flex flex-col transition-all duration-300 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
-                                <span className="text-[9px] font-black tracking-[0.3em] text-[#FF7637] uppercase">{config.navbar_brand || 'SoSo Scholar 2025'}</span>
+                            <a href="https://sosovalue.com" target="_blank" className="hover:opacity-80 transition-opacity">
+                                <img src={config.navbar_logo || "./sosovalue-logo.svg"} className="h-8" alt="Logo" />
+                            </a>
+                            <div className="hidden sm:block h-6 w-[1px] bg-white/10"></div>
+                            <div className="hidden sm:flex items-center gap-5">
+                                <a href="https://ssi.sosovalue.com" target="_blank" className="hover:opacity-70 transition-opacity">
+                                    <img src="https://cdn.jsdelivr.net/gh/sevclub/publicimage@main/White%20horizontal%20(2).svg" alt="SSI" className="h-7 w-auto" />
+                                </a>
+                                <a href="https://sodex.com" target="_blank" className="hover:opacity-70 transition-opacity">
+                                    <img src="https://cdn.jsdelivr.net/gh/sevclub/publicimage@main/SoDEX(1).svg" alt="SoDEX" className="h-7 w-auto" />
+                                </a>
+                            </div>
+                            <div className={`hidden md:block h-6 w-[1px] bg-white/10 transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0'}`}></div>
+                            <div className={`hidden md:flex flex-col transition-all duration-300 ${scrolled ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4'}`}>
+                                <span className="text-[9px] font-black tracking-[0.3em] text-[#FF7637] uppercase">{config.navbar_brand || 'SoSoScholar 2025'}</span>
                                 <span className="font-bold text-[11px] text-white/50">{config.navbar_subtitle || 'HALL_OF_FAME'}</span>
                             </div>
                         </div>
-                        <div className="flex items-center gap-6">
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScieiNdLdCzNzEuIpk6Gbba92hhZ3m6O3XV9MkgkHwxbu-uWQ/viewform?usp=dialog" target="_blank" className="btn-apply">
+                        <div className="flex items-center gap-4">
+                            <a href="https://forms.gle/pjEBkTG6MnUfXRJ58" target="_blank" className="btn-apply">
                                 Join Us
                             </a>
                         </div>
                     </nav>
+
+                    {/* Open Letter Banner - Top */}
+                    <a href="https://sosovalue.com/shares/Phn8Jr" target="_blank" rel="noopener noreferrer" className="relative z-50 block cursor-pointer bg-gradient-to-r from-[#FACC15]/10 via-[#FF7637]/10 to-[#FACC15]/10 border-b border-[#FACC15]/20 hover:from-[#FACC15]/20 hover:via-[#FF7637]/20 hover:to-[#FACC15]/20 transition-all">
+                        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-center gap-4 pointer-events-none">
+                            <span className="px-2 py-0.5 rounded text-[9px] font-black tracking-[0.15em] uppercase bg-[#FACC15]/20 text-[#FACC15]">
+                                Open Letter
+                            </span>
+                            <span className="text-white/90 text-sm font-semibold">
+                                From Casino to the New Ark — To Those Who Still Survive in Crypto
+                            </span>
+                            <span className="text-[#FACC15] text-sm">→</span>
+                        </div>
+                    </a>
 
                     {/* Hero - Redesigned with 3D Grid */}
                     <header className="relative" style={{minHeight: '100vh', overflow: 'clip'}}>
@@ -735,6 +961,10 @@
                         <div className="hero-glow-sphere"></div>
                         <div className="hero-spotlight"></div>
                         <div className="hero-vignette"></div>
+
+                        {/* Hero Ark Background */}
+                        <div className="hero-ark-glow"></div>
+                        <ArkSVG className="hero-ark" />
 
                         {/* Floating ribbon - top left */}
                         <svg className="ribbon-left" viewBox="0 0 300 200" fill="none">
@@ -805,7 +1035,7 @@
                                         SoSoValue S3 Winners
                                     </span>
                                 </div>
-                                <h1 className="gradient-text-gold text-7xl md:text-[110px] leading-none mb-6" style={{overflow: 'visible', paddingRight: '10px'}}>SoSo Scholar 2025</h1>
+                                <h1 className="gradient-text-gold text-7xl md:text-[110px] leading-none mb-6" style={{overflow: 'visible', paddingRight: '10px'}}>SoSoScholar 2025</h1>
                                 <p className="text-xl md:text-[22px] font-extrabold tracking-[0.15em] uppercase text-white/80 mb-12">
                                     Hall of Fame
                                 </p>
@@ -814,19 +1044,19 @@
                             {/* Stats Section - follows title */}
                             <div className="flex flex-nowrap justify-center items-center gap-6 md:gap-10">
                                 <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-[#FF7637]">{scholars.length}</div>
+                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{scholars.length}</div>
                                     <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_winners_label || 'Winners'}</div>
                                 </div>
                                 <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-[#E54D2E]">${(totalPrize / 1000).toFixed(0)}k</div>
+                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">${(totalPrize / 1000).toFixed(0)}k</div>
                                     <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_prize_label || 'Prize Pool'}</div>
                                 </div>
                                 <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-[#C53030]">{config.stats_submissions_value || '4,279'}</div>
+                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{config.stats_submissions_value || '4,279'}</div>
                                     <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_submissions_label || 'Submissions'}</div>
                                 </div>
                                 <div className="data-module">
-                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-[#8B2020]">{config.stats_regions_value || '15+'}</div>
+                                    <div className="text-5xl md:text-6xl font-black leading-none mb-3 text-white">{config.stats_regions_value || '15+'}</div>
                                     <div className="text-xs font-bold text-gray-400 tracking-[0.2em] uppercase">{config.stats_regions_label || 'Regions'}</div>
                                 </div>
                             </div>
@@ -861,6 +1091,40 @@
                         </div>
                     </section>
 
+                    {/* SoDEX Video Section */}
+                    <section className="px-6 py-16 relative">
+                        <div className="max-w-4xl mx-auto">
+                            <div className="text-center mb-10">
+                                <h2 className="text-3xl md:text-4xl font-black text-white mb-3">
+                                    Discover <span className="text-[#FF7637]">SoDEX</span>
+                                </h2>
+                                <p className="text-white/50 text-sm max-w-lg mx-auto">
+                                    The next generation decentralized exchange powering the future of crypto trading.
+                                </p>
+                            </div>
+                            <a
+                                href="https://www.youtube.com/watch?v=C1kWWoFl40s"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/50 hover:border-[#FF7637]/50 transition-all group"
+                                style={{aspectRatio: '16/9'}}
+                            >
+                                <img
+                                    src="https://img.youtube.com/vi/C1kWWoFl40s/maxresdefault.jpg"
+                                    alt="SoDEX Video"
+                                    className="w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/20 transition-all">
+                                    <div className="w-20 h-20 rounded-full bg-[#FF0000] flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg">
+                                        <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
                     {/* CTA Section with 3D Grid */}
                     <section id="apply" className="px-6 py-20 relative overflow-hidden">
                         {/* 3D Grid Background - lighter version */}
@@ -886,7 +1150,7 @@
                                     Prizes claimable on <span className="text-[#FFD700] font-bold">Feb 13</span> via <span className="text-[#FFD700] font-bold">SoDEX.com</span> Airdrop
                                 </p>
                             </div>
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScieiNdLdCzNzEuIpk6Gbba92hhZ3m6O3XV9MkgkHwxbu-uWQ/viewform?usp=dialog" target="_blank" className="btn-apply text-base px-12 py-4 inline-block">
+                            <a href="https://forms.gle/pjEBkTG6MnUfXRJ58" target="_blank" className="btn-apply text-base px-12 py-4 inline-block">
                                 Apply Now
                             </a>
                         </div>
@@ -897,7 +1161,7 @@
                         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[8px] font-black text-white/20 tracking-[0.3em] uppercase">
                             <div className="flex items-center gap-3">
                                 <img src={config.navbar_logo || "./sosovalue-logo.svg"} className="h-4 opacity-20 grayscale" />
-                                <span>{config.footer_brand || 'SoSo Scholar Hall of Fame'}</span>
+                                <span>{config.footer_brand || 'SoSoScholar Hall of Fame'}</span>
                             </div>
                             <span>{config.footer_copyright || '© 2025 SoSoValue. All Rights Reserved'}</span>
                             <div className="flex gap-6">

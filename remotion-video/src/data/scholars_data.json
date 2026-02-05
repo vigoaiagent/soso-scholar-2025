@@ -1,0 +1,716 @@
+{
+  "meta": {
+    "title": "SoSo Scholar 2025 | Elite Researcher Hall of Fame",
+    "season": 3,
+    "total_winners": 39,
+    "last_updated": "2026-02-04",
+    "data_source": "Lark Excel"
+  },
+  "scholars": [
+    {
+      "id": 1,
+      "name": "Dapangdun",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "BTC's Quantum Threat: A Real Existing Threat",
+      "twitter": "https://x.com/dapangdun",
+      "twitter_handle": "dapangdun",
+      "tokenbar": "https://sosovalue.com/tokenbar/post/2005531162254438401",
+      "region": "Chinese",
+      "category": "Bitcoin/Prediction Market",
+      "avatar": "./avatars/dapangdun.jpg"
+    },
+    {
+      "id": 2,
+      "name": "McKenna",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Arete Capital Hyperliquid 2026 Thesis: Housing The Entirety Of Finance",
+      "twitter": "https://x.com/Crypto_McKenna",
+      "twitter_handle": "Crypto_McKenna",
+      "tokenbar": "https://sosovalue.com/research/1978705829248204800",
+      "region": "UAE",
+      "category": "HYPE",
+      "avatar": "./avatars/Crypto_McKenna.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Simon",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "If you told me 6 months ago that Zcash would start absorbing Bitcoin’s original use-case, I’d have laughed.",
+      "twitter": "https://x.com/simononchain",
+      "twitter_handle": "simononchain",
+      "tokenbar": "https://sosovalue.com/research/2008912533826056192",
+      "region": "USA",
+      "category": "ZEC",
+      "avatar": "./avatars/simononchain.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Smart Ape",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "I built a Polymarket bot and tested multiple parameter setups, here are the results ",
+      "twitter": "https://x.com/the_smart_ape",
+      "twitter_handle": "the_smart_ape",
+      "tokenbar": "https://sosovalue.com/research/2009059291816620032",
+      "region": "Morocco",
+      "category": "Prediction Market",
+      "avatar": "./avatars/the_smart_ape.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Stacy Murr",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "The Perp DEX Wars of 2025: Hyperliquid, Aster, Lighter, and EdgeX ",
+      "twitter": "https://x.com/stacy_muur",
+      "twitter_handle": "stacy_muur",
+      "tokenbar": "https://sosovalue.com/research/2009069257887584256",
+      "region": "Eastern Europe",
+      "category": "Perp DEX",
+      "avatar": "./avatars/stacy_muur.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Professor Jo",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Stablecoins at the Center of the Digital Dollar Era",
+      "twitter": "https://x.com/0xProfessorJo",
+      "twitter_handle": "0xProfessorJo",
+      "tokenbar": "https://sosovalue.com/research/2011823985131085824",
+      "region": "Korea",
+      "category": "Stablecoin",
+      "avatar": "./avatars/0xProfessorJo.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Ardnxt",
+      "tier": 1,
+      "prize": "$1,800",
+      "awards": [
+        "Best Research",
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "The New Perp DEX Primitive: Get Paid to Trade",
+      "twitter": "https://x.com/arndxt_xo",
+      "twitter_handle": "arndxt_xo",
+      "tokenbar": "https://sosovalue.com/research/2011816287654060032",
+      "region": "Singapore",
+      "category": "PerpDEX",
+      "avatar": "./avatars/arndxt_xo.jpg"
+    },
+    {
+      "id": 8,
+      "name": "ET",
+      "tier": 1,
+      "prize": "$1,300",
+      "awards": [
+        "Best Research",
+        "Best Analysis"
+      ],
+      "topic": "BTC's 'Black Monday': How Will Japanese Yen Rate Hikes Impact BTC Prices?",
+      "twitter": "https://x.com/CapitalAgarwood",
+      "twitter_handle": "CapitalAgarwood",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1996425524144435202",
+      "region": "Chinese",
+      "category": "Bitcoin",
+      "avatar": "./avatars/CapitalAgarwood.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Trading Hoe",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Survival First, Profits Second",
+      "twitter": "https://x.com/tradinghoex",
+      "twitter_handle": "tradinghoex",
+      "tokenbar": "https://sosovalue.com/research/2011811637625159680",
+      "region": "North America",
+      "category": "Narrative",
+      "avatar": "./avatars/tradinghoex.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Phan Đạt",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "SIGNS OF A PROJECT YOU SHOULD AVOID INVESTING IN",
+      "twitter": "https://x.com/PhanDat0612",
+      "twitter_handle": "PhanDat0612",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1960156484629831682",
+      "region": "Vietnam",
+      "category": "",
+      "avatar": "./avatars/PhanDat0612.jpg"
+    },
+    {
+      "id": 11,
+      "name": "gayau",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Extreme Fear Is Not the Best Time to Buy: Analyzing Two Aspects of Structural Changes",
+      "twitter": "https://x.com/gayau_eth",
+      "twitter_handle": "gayau_eth",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1994614995004354561",
+      "region": "Chinese",
+      "category": "Trading",
+      "avatar": "./avatars/gayau_eth.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Panterafi",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Research"
+      ],
+      "topic": "The Stable Coin Bible: Risk Metrics & Comparative Analysis",
+      "twitter": "https://x.com/panterafii",
+      "twitter_handle": "panterafii",
+      "tokenbar": "https://sosovalue.com/en/tokenbar/post/1991117528823595009",
+      "region": "France",
+      "category": "Stablecoin",
+      "avatar": "./avatars/panterafii.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Zuoye",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Research"
+      ],
+      "topic": "The Journey of Hyperliquid",
+      "twitter": "https://x.com/zuoyeweb3",
+      "twitter_handle": "zuoyeweb3",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1978003841212833794",
+      "region": "Chinese",
+      "category": "HYPE",
+      "avatar": "./avatars/zuoyeweb3.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Aldrin",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Exploring BIO Protocol: Utility, Narrative, and Market Dynamics",
+      "twitter": "https://x.com/Crypto4chun",
+      "twitter_handle": "Crypto4chun",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1961107708714369025",
+      "region": "Indonesia",
+      "category": "",
+      "avatar": "./avatars/Crypto4chun.jpg"
+    },
+    {
+      "id": 15,
+      "name": "FadaTech",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "SoSoValue: The Compass for Finding Real Value in 2025...",
+      "twitter": "https://x.com/normiece",
+      "twitter_handle": "normiece",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1967000739987652609",
+      "region": "Nigeria",
+      "category": "",
+      "avatar": "./avatars/normiece.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Bocai",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Analysis: Singapore MAS RWA Issuance Framework with 17 Token Case Studies",
+      "twitter": "https://x.com/bocaibocai_",
+      "twitter_handle": "bocaibocai_",
+      "tokenbar": "https://sosovalue.com/tokenbar/post/1993647010386243585",
+      "region": "Chinese",
+      "category": "Stablecoin",
+      "avatar": "https://unavatar.io/twitter/bocaibocai_"
+    },
+    {
+      "id": 17,
+      "name": "bc1qDave",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "Why it's not a sweet deal to buy $HYPE now?",
+      "twitter": "https://x.com/bc1qDave",
+      "twitter_handle": "bc1qDave",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1993216451668275201",
+      "region": "Chinese",
+      "category": "HYPE",
+      "avatar": "./avatars/bc1qDave.jpg"
+    },
+    {
+      "id": 18,
+      "name": "LutzS120",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "The Hidden Force Driving Bitcoin: Global M2 - Liquidity or Illusion?",
+      "twitter": "https://x.com/Lutz_S120",
+      "twitter_handle": "Lutz_S120",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1960381393069621249",
+      "region": "Germany",
+      "category": "Macro",
+      "avatar": "./avatars/Lutz_S120.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Anita",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "From a16z's Asian Retreat: The Twilight of VC Empires and New Kings",
+      "twitter": "https://x.com/Anitahityou",
+      "twitter_handle": "Anitahityou",
+      "tokenbar": "https://sosovalue.com/zh/research/2008921116898639872",
+      "region": "Chinese",
+      "category": "Prediction Market, RWA, VC",
+      "avatar": "./avatars/Anitahityou.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Pepe is Friend",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Analysis",
+        "Most Popular"
+      ],
+      "topic": "CRYPTO REGULATION: A PROTECTIVE SHIELD OR A BARRIER TO THE DECENTRALIZED SPIRIT?",
+      "twitter": "https://x.com/pepeisfriend",
+      "twitter_handle": "pepeisfriend",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1960507225180160002",
+      "region": "Vietnam",
+      "category": "SOSO",
+      "avatar": "./avatars/pepeisfriend.jpg"
+    },
+    {
+      "id": 21,
+      "name": "i_am_meme",
+      "tier": 3,
+      "prize": "$800",
+      "awards": [
+        "Best Analysis"
+      ],
+      "topic": "What the hell is Difficulty and why does it dare to decide BTC price?",
+      "twitter": "https://x.com/iammeme84",
+      "twitter_handle": "iammeme84",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1991431762314612738",
+      "region": "Vietnam",
+      "category": "Bitcoin Mining",
+      "avatar": "./avatars/iammeme84.jpg"
+    },
+    {
+      "id": 22,
+      "name": "shisi",
+      "tier": 3,
+      "prize": "$800",
+      "awards": [
+        "Best Research"
+      ],
+      "topic": "Reflections on MEV, Sequencing Mechanisms and Power Evolution - Part 1",
+      "twitter": "https://x.com/c_luyishisi",
+      "twitter_handle": "c_luyishisi",
+      "tokenbar": "https://sosovalue.com/tokenbar/post/1989711112855040002",
+      "region": "Chinese",
+      "category": "DEFI",
+      "avatar": "./avatars/c_luyishisi.jpg"
+    },
+    {
+      "id": 23,
+      "name": "IZU",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Most Popular"
+      ],
+      "topic": "My Complete Altcoin Research Playbook",
+      "twitter": "https://x.com/izu_crypt",
+      "twitter_handle": "izu_crypt",
+      "tokenbar": "https://sosovalue.com/research/2013277106877325312",
+      "region": "Africa",
+      "category": "Altcoins",
+      "avatar": "./avatars/izu_crypt.jpg"
+    },
+    {
+      "id": 24,
+      "name": "GOODLUCK CHIMEZIE EJIOFOR",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Most Popular"
+      ],
+      "topic": "#SoSoScholar2025 @SoSoValueCrypto Why I’m Bullish on $SOSO",
+      "twitter": "https://x.com/goodybtc",
+      "twitter_handle": "goodybtc",
+      "tokenbar": "https://sosovalue.com/tokenbar/post/1965815758531657730",
+      "region": "South Africa",
+      "category": "SOSO",
+      "avatar": "./avatars/goodybtc.jpg"
+    },
+    {
+      "id": 25,
+      "name": "ZJ",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Most Popular"
+      ],
+      "topic": "Dessert for Dinner: Crypto's Obsession with Buybacks",
+      "twitter": "https://x.com/0xslayerrrr",
+      "twitter_handle": "0xslayerrrr",
+      "tokenbar": "https://sosovalue.com/tc/sososcholar/post/2012118270893961217",
+      "region": "USA",
+      "category": "",
+      "avatar": "./avatars/0xslayerrrr.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Nuri",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Best Analysis"
+      ],
+      "topic": "The Rise of Bots and the Imperative of Human Verification: A Critical Analysis",
+      "twitter": "https://x.com/cryptobi_nuri",
+      "twitter_handle": "cryptobi_nuri",
+      "tokenbar": "https://sosovalue.com/tokenbar/post/1971860796383379458",
+      "region": "Turkey",
+      "category": "",
+      "avatar": "./avatars/cryptobi_nuri.jpg"
+    },
+    {
+      "id": 27,
+      "name": "cryptoboy777",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Best Analysis"
+      ],
+      "topic": "The Unbundling of Binance: Why SoDEX and the 'Sovereign Exchange' Model Are the Next Trillion-Dollar Narrative",
+      "twitter": "https://x.com/Cryptotelugu12",
+      "twitter_handle": "Cryptotelugu12",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/2004926721459245057?inviteCode=418A10DP",
+      "region": "India",
+      "category": "SoDEX",
+      "avatar": "./avatars/Cryptotelugu12.jpg"
+    },
+    {
+      "id": 28,
+      "name": "JellyZ",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Best Analysis"
+      ],
+      "topic": "Multi-Period MACD Linear Prediction Strategy Backtest",
+      "twitter": "https://x.com/JellyZhouishere",
+      "twitter_handle": "JellyZhouishere",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1995048144468279297",
+      "region": "Chinese",
+      "category": "Technical Analysis",
+      "avatar": "./avatars/JellyZhouishere.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Murphy",
+      "tier": 3,
+      "prize": "$500",
+      "awards": [
+        "Best Analysis"
+      ],
+      "topic": "BTC Key Support and Resistance Level Dynamics",
+      "twitter": "https://x.com/Murphychen888",
+      "twitter_handle": "Murphychen888",
+      "tokenbar": "https://x.com/Murphychen888/status/1970403981727076568",
+      "region": "Chinese",
+      "category": "Bitcoin",
+      "avatar": "./avatars/Murphychen888.jpg"
+    },
+    {
+      "id": 30,
+      "name": "XingGPT",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Autumn Bull Market Offensive - A Feast of Liquidity",
+      "twitter": "https://x.com/xingpt",
+      "twitter_handle": "xingpt",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1968945825963196418",
+      "region": "Chinese",
+      "category": "",
+      "avatar": "./avatars/xingpt.jpg"
+    },
+    {
+      "id": 31,
+      "name": "HarryM",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Research on the Risks of Crowded BTC Basis Trading",
+      "twitter": "https://x.com/gmharryyy",
+      "twitter_handle": "gmharryyy",
+      "tokenbar": "https://sosovalue.com/zh/sososcholar/post/1990287854473924609",
+      "region": "Chinese",
+      "category": "Bitcoin",
+      "avatar": "./avatars/gmharryyy.jpg"
+    },
+    {
+      "id": 32,
+      "name": "Hanhan",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Down 77% from Highs: Is Circle (CRCL), the First Stablecoin Stock, a Buy Now?",
+      "twitter": "https://x.com/hanhan4web3",
+      "twitter_handle": "hanhan4web3",
+      "tokenbar": "https://sosovalue.com/zh/sosocholar/post/1991822374035009538",
+      "region": "Chinese",
+      "category": "Stablecoin",
+      "avatar": "./avatars/hanhan4web3.jpg"
+    },
+    {
+      "id": 33,
+      "name": "Lucky",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "The Collapse of LUNA: From the Dream of a Decentralized Stablecoin to a Historic Crypto Tragedy",
+      "twitter": "https://x.com/geminigoldsaint",
+      "twitter_handle": "geminigoldsaint",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1959462677922779138",
+      "region": "Indonesia",
+      "category": "LUNA",
+      "avatar": "./avatars/geminigoldsaint.jpg"
+    },
+    {
+      "id": 34,
+      "name": "RiverLee",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Solana ($SOL): Why Today Is the Day to Buy Into Web3’s Fastest Ecosystem (With SoSoValue Data)",
+      "twitter": "https://x.com/riverlee99",
+      "twitter_handle": "riverlee99",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1960508237773479937",
+      "region": "Vietnam",
+      "category": "",
+      "avatar": "./avatars/riverlee99.jpg"
+    },
+    {
+      "id": 35,
+      "name": "Vicky",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Liquidity drives crypto cycles.",
+      "twitter": "https://x.com/vickydiamond21",
+      "twitter_handle": "vickydiamond21",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1990954820322807809",
+      "region": "Africa",
+      "category": "",
+      "avatar": "./avatars/vickydiamond21.jpg"
+    },
+    {
+      "id": 36,
+      "name": "bogia",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Analysis of $SOSO’s Potential",
+      "twitter": "https://x.com/CayairdropX",
+      "twitter_handle": "CayairdropX",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1959823181995114497",
+      "region": "Vietnam",
+      "category": "",
+      "avatar": "./avatars/CayairdropX.jpg"
+    },
+    {
+      "id": 37,
+      "name": "Marshal",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "The Endgame of Ethereum Scaling: Performance and Decentralization Coexist",
+      "twitter": "https://x.com/dashuaiff",
+      "twitter_handle": "dashuaiff",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1995111030934958082",
+      "region": "Chinese",
+      "category": "Ethereum",
+      "avatar": "./avatars/dashuaiff.jpg"
+    },
+    {
+      "id": 38,
+      "name": "Wenser",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Rise of RWA Narrative: From Asset Tokenization to Business Tokenization",
+      "twitter": "https://x.com/wenser2010",
+      "twitter_handle": "wenser2010",
+      "tokenbar": "https://sosovalue.com/zh/sosocholar/post/1993152842850979841",
+      "region": "Chinese",
+      "category": "RWA",
+      "avatar": "./avatars/wenser2010.jpg"
+    },
+    {
+      "id": 39,
+      "name": "Arnel",
+      "tier": 4,
+      "prize": "$200",
+      "awards": [
+        "Best Newcomer"
+      ],
+      "topic": "Best Crypto Investment Target for 2025: Ethereum",
+      "twitter": "https://x.com/Tadle4Arnel",
+      "twitter_handle": "Tadle4Arnel",
+      "tokenbar": "https://sosovalue.com/sososcholar/post/1972151308556533762",
+      "region": "Philippines",
+      "category": "Ethereum",
+      "avatar": "./avatars/Tadle4Arnel.jpg"
+    }
+  ],
+  "tiers": {
+    "1": {
+      "name": "Excellence Tier",
+      "prize_range": "$1,300 - $1,800",
+      "color": "#FFD700"
+    },
+    "2": {
+      "name": "Strategic Insights",
+      "prize_range": "$1,000",
+      "color": "#FF7637"
+    },
+    "3": {
+      "name": "Research Contributors",
+      "prize_range": "$500 - $800",
+      "color": "#00F0FF"
+    },
+    "4": {
+      "name": "Rising Stars",
+      "prize_range": "$200",
+      "color": "#00F0FF"
+    }
+  },
+  "site_config": {
+    "site_title": "SoSo Scholar 2025 | Elite Researcher Hall of Fame",
+    "season": "3",
+    "last_updated": "2025-02-03",
+    "navbar_logo": "./sosovalue-logo.svg",
+    "navbar_brand": "SoSo Scholar 2025",
+    "navbar_subtitle": "HALL_OF_FAME",
+    "apply_button_text": "Apply S4",
+    "apply_email": "sososcholar@sosovalue.com",
+    "hero_badge_text": "S3 Winners Announced",
+    "hero_title_line1": "SOSO SCHOLAR",
+    "hero_title_line2": "RANKINGS",
+    "hero_title_year": "2025",
+    "hero_description": "Celebrating {count} elite researchers who defined the new standard of crypto intelligence in S3.",
+    "stats_winners_label": "Winners",
+    "stats_prize_label": "Prize Pool",
+    "stats_regions_label": "Regions",
+    "stats_regions_value": "15+",
+    "cta_title_line1": "CLAIM YOUR",
+    "cta_title_line2": "RANK.",
+    "cta_description": "The search for Season IV scholars begins soon. Submit your data, prove your thesis, and join the elite ranks.",
+    "cta_button_text": "Apply for S4",
+    "footer_brand": "SoSo Scholar Hall of Fame",
+    "footer_copyright": "© 2025 SoSoValue. All Rights Reserved",
+    "footer_twitter_url": "https://x.com/SoSoValueCrypto",
+    "footer_twitter_text": "X / TWITTER",
+    "footer_website_url": "https://sosovalue.com",
+    "footer_website_text": "SOSOVALUE",
+    "card_report_button": "RESEARCH ↗",
+    "color_orange": "#FF7637",
+    "color_cyan": "#00F0FF",
+    "color_gold": "#FFD700",
+    "color_dark": "#050505"
+  }
+}
