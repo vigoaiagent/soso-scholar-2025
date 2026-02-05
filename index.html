@@ -445,11 +445,11 @@
                             {s.name}
                         </h3>
                         <p className="text-white/50 text-sm italic line-clamp-2 leading-relaxed mb-3">"{s.topic}"</p>
-                        <div className="flex items-center gap-2">
-                            <span className="mono text-xs font-bold text-white/30 uppercase tracking-[0.1em]">{s.region}</span>
-                            <span className="text-white/20">•</span>
-                            <span className="text-xs font-bold text-white/40">{s.category}</span>
-                        </div>
+                        {s.category && (
+                            <div className="flex items-center gap-2">
+                                <span className="text-xs font-bold text-white/40">{s.category}</span>
+                            </div>
+                        )}
                     </div>
 
                     <div className="mt-6 pt-5 border-t border-white/5 flex items-center justify-between z-10">

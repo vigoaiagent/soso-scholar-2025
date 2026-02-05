@@ -171,16 +171,12 @@
                                 {scholar.name}
                             </h1>
 
-                            {/* Region & Category */}
-                            <div className="flex items-center gap-3 mb-6 text-white/50">
-                                <span className="mono text-sm">{scholar.region}</span>
-                                {scholar.category && (
-                                    <>
-                                        <span>•</span>
-                                        <span className="text-sm">{scholar.category}</span>
-                                    </>
-                                )}
-                            </div>
+                            {/* Category */}
+                            {scholar.category && (
+                                <div className="flex items-center gap-3 mb-6 text-white/50">
+                                    <span className="text-sm">{scholar.category}</span>
+                                </div>
+                            )}
 
                             {/* Awards */}
                             <div className="flex flex-wrap justify-center gap-2 mb-8">
