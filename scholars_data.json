@@ -2,8 +2,8 @@
   "meta": {
     "title": "SoSo Scholar 2025 | Elite Researcher Hall of Fame",
     "season": 3,
-    "total_winners": 39,
-    "last_updated": "2026-02-04",
+    "total_winners": 40,
+    "last_updated": "2026-02-06",
     "data_source": "Lark Excel"
   },
   "scholars": [
@@ -655,6 +655,22 @@
       "region": "Philippines",
       "category": "Ethereum",
       "avatar": "./avatars/Tadle4Arnel.jpg"
+    },
+    {
+      "id": 40,
+      "name": "Shardy",
+      "tier": 2,
+      "prize": "$1,000",
+      "awards": [
+        "Best Research"
+      ],
+      "topic": "",
+      "twitter": "https://x.com/0xshardy",
+      "twitter_handle": "0xshardy",
+      "tokenbar": "https://sosovalue.com/sosocholar/post/1971586683538456578",
+      "region": "Turkey",
+      "category": "SoDEX",
+      "avatar": "https://unavatar.io/twitter/0xshardy"
     }
   ],
   "tiers": {
